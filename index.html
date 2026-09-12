@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>ถึงมินนี่ ❤️</title>
+
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        sans-serif;
+
+    color: white;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            #ffd6e5 0%,
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            #ff174f 0%,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ffb6d0,
+            #ff5c91,
+            #ed2866,
+            #a90042
+        );
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.bg {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    opacity: .35;
+}
+
+
+.glow1 {
+
+    width: 250px;
+
+    height: 250px;
+
+    background: white;
+
+    left: -80px;
+
+    top: -80px;
+}
+
+
+.glow2 {
+
+    width: 300px;
+
+    height: 300px;
+
+    background: #ff0055;
+
+    right: -100px;
+
+    bottom: -100px;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 18px 10px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+
+    width: min(720px, 94vw);
+
+    padding: 25px 20px 28px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.15);
+
+    backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(100,0,40,.35);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.main-heart {
+
+    font-size: 48px;
+
+    animation:
+        heartbeat 1.2s infinite;
+
+    filter:
+        drop-shadow(
+            0 5px 15px
+            rgba(255,0,80,.4)
+        );
+}
+
+
+h1 {
+
+    font-size: 32px;
+
+    margin-top: 2px;
+
+    text-shadow:
+        0 5px 20px
+        rgba(100,0,40,.3);
+}
+
+
+.subtitle {
+
+    font-size: 15px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   PHOTO AREA
+========================================= */
+
+.photos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    max-width: 620px;
+
+    margin:
+        20px auto 18px;
+}
+
+
+/* =========================================
+   PHOTO CARD
+========================================= */
+
+.photo-card {
+
+    padding: 5px;
+
+    background:
+        rgba(255,255,255,.20);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(90,0,35,.25);
+
+    transition: .3s;
+}
+
+
+.photo-card:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.photo {
+
+    width: 100%;
+
+    height: 270px;
+
+    object-fit: cover;
+
+    display: none;
+
+    border-radius: 14px;
+
+    border:
+        3px solid
+        rgba(255,255,255,.85);
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.placeholder {
+
+    width: 100%;
+
+    height: 270px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    border-radius: 14px;
+
+    border:
+        2px dashed
+        rgba(255,255,255,.6);
+
+    background:
+        rgba(255,255,255,.07);
+
+    font-size: 14px;
+}
+
+
+.placeholder-icon {
+
+    font-size: 38px;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   UPLOAD BUTTON
+========================================= */
+
+.upload {
+
+    display: inline-block;
+
+    margin-top: 7px;
+
+    padding: 7px 13px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    color: #e91e63;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.upload:hover {
+
+    transform:
+        scale(1.05);
+}
+
+
+.upload input {
+
+    display: none;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+
+    max-width: 600px;
+
+    margin:
+        15px auto;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    text-shadow:
+        0 2px 10px
+        rgba(100,0,40,.25);
+}
+
+
+/* =========================================
+   QUESTION OPEN BUTTON
+========================================= */
+
+.open-button {
+
+    border: none;
+
+    padding:
+        11px 25px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    color: #df1558;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    box-shadow:
+        0 7px 20px
+        rgba(100,0,40,.2);
+}
+
+
+.open-button:hover {
+
+    transform:
+        scale(1.06);
+}
+
+
+/* =========================================
+   QUESTION AREA
+========================================= */
+
+#questionArea {
+
+    margin-top: 15px;
+}
+
+
+.question-box {
+
+    animation:
+        questionIn .5s ease;
+}
+
+
+.question {
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    min-height: 30px;
+}
+
+
+/* =========================================
+   CHOICES
+========================================= */
+
+.choices {
+
+    min-height: 75px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.choice {
+
+    border: none;
+
+    border-radius: 999px;
+
+    padding:
+        11px 25px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform .35s ease,
+        box-shadow .3s ease;
+}
+
+
+.yes {
+
+    background: white;
+
+    color: #e91e63;
+
+    box-shadow:
+        0 7px 20px
+        rgba(255,255,255,.3);
+}
+
+
+.no {
+
+    background: #9d174d;
+
+    color: white;
+
+    box-shadow:
+        0 7px 20px
+        rgba(70,0,30,.25);
+}
+
+
+/* =========================================
+   SUCCESS
+========================================= */
+
+.success {
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    line-height: 1.7;
+
+    animation:
+        successPop .6s ease;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    margin-top: 18px;
+
+    font-size: 11px;
+
+    opacity: .7;
+}
+
+
+/* =========================================
+   FLOATING HEART
+========================================= */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -40px;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    animation:
+        floatUp
+        linear
+        forwards;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes heartbeat {
+
+    0%,100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+    }
+}
+
+
+@keyframes floatUp {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: .9;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes questionIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(.9);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes successPop {
+
+    0% {
+
+        transform:
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    70% {
+
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px) {
+
+    .container {
+
+        padding:
+            10px 7px;
+    }
+
+
+    .card {
+
+        width: 96vw;
+
+        padding:
+            20px 12px 23px;
+    }
+
+
+    .main-heart {
+
+        font-size: 40px;
+    }
+
+
+    h1 {
+
+        font-size: 27px;
+    }
+
+
+    .subtitle {
+
+        font-size: 13px;
+    }
+
+
+    .photos {
+
+        gap: 8px;
+
+        margin:
+            15px auto;
+    }
+
+
+    .photo,
+    .placeholder {
+
+        height: 210px;
+    }
+
+
+    .message {
+
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+
+    .question {
+
+        font-size: 18px;
+    }
+
+
+    .choice {
+
+        padding:
+            9px 20px;
+
+        font-size: 13px;
+    }
+
+
+    .success {
+
+        font-size: 16px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     BACKGROUND
+===================================== -->
+
+<div class="bg">
+
+    <div class="glow glow1"></div>
+
+    <div class="glow glow2"></div>
+
+</div>
+
+
+
+<!-- =====================================
+     MAIN
+===================================== -->
+
+<div class="container">
+
+<div class="card">
+
+
+    <!-- TITLE -->
+
+    <div class="main-heart">
+        ❤️
+    </div>
+
+
+    <h1>
+        ถึง มินนี่ 💕
+    </h1>
+
+
+    <div class="subtitle">
+        จาก ต้นน้ำ
+    </div>
+
+
+
+    <!-- =================================
+         PHOTOS
+    ================================== -->
+
+    <div class="photos">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="photo-card">
+
+            <div
+                class="placeholder"
+                id="placeholder1"
+            >
+
+                <div class="placeholder-icon">
+                    📷
+                </div>
+
+                ใส่รูปของมินนี่
+
+            </div>
+
+
+            <img
+                id="photo1"
+                class="photo"
+                alt="รูปที่ 1"
+            >
+
+
+            <label class="upload">
+
+                📸 เลือกรูปที่ 1
+
+                <input
+                    type="file"
+                    accept="image/*"
+                    onchange="loadPhoto(event,1)"
+                >
+
+            </label>
+
+        </div>
+
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="photo-card">
+
+            <div
+                class="placeholder"
+                id="placeholder2"
+            >
+
+                <div class="placeholder-icon">
+                    📷
+                </div>
+
+                ใส่รูปของมินนี่
+
+            </div>
+
+
+            <img
+                id="photo2"
+                class="photo"
+                alt="รูปที่ 2"
+            >
+
+
+            <label class="upload">
+
+                📸 เลือกรูปที่ 2
+
+                <input
+                    type="file"
+                    accept="image/*"
+                    onchange="loadPhoto(event,2)"
+                >
+
+            </label>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================
+         LOVE MESSAGE
+    ================================== -->
+
+    <div class="message">
+
+        ขอบคุณที่เข้ามาเป็นความสุข
+        ในทุก ๆ วันของเค้านะ ❤️
+
+        <br>
+
+        ถึงบางครั้งเราอาจมีงอนกันบ้าง
+
+        <br>
+
+        แต่เค้ายังรักเธอเหมือนเดิมเสมอ 💗
+
+        <br><br>
+
+        อยากอยู่ข้าง ๆ เธอไปนาน ๆ เลยนะ
+
+    </div>
+
+
+
+    <!-- =================================
+         QUESTION BUTTON
+    ================================== -->
+
+    <button
+        class="open-button"
+        onclick="openQuestion()"
+    >
+
+        💌 มีคำถามอยากถาม
+
+    </button>
+
+
+
+    <!-- QUESTION -->
+
+    <div id="questionArea"></div>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        Made with ❤️ by ต้นน้ำ
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================
+   PHOTO UPLOAD
+========================================= */
+
+function loadPhoto(event, number) {
+
+    const file =
+        event.target.files[0];
+
+    if (!file) return;
+
+
+    const image =
+        document.getElementById(
+            "photo" + number
+        );
+
+
+    const placeholder =
+        document.getElementById(
+            "placeholder" + number
+        );
+
+
+    image.src =
+        URL.createObjectURL(file);
+
+
+    image.style.display =
+        "block";
+
+
+    placeholder.style.display =
+        "none";
+}
+
+
+
+/* =========================================
+   OPEN QUESTION
+========================================= */
+
+function openQuestion() {
+
+    document.getElementById(
+        "questionArea"
+    ).innerHTML = `
+
+        <div class="question-box">
+
+            <div
+                class="question"
+                id="questionText"
+            >
+                มินนี่รักต้นน้ำไหม? 💕
+            </div>
+
+
+            <div class="choices">
+
+                <button
+                    id="yesButton"
+                    class="choice yes"
+                    onclick="yesLove()"
+                >
+                    ❤️ รัก
+                </button>
+
+
+                <button
+                    id="noButton"
+                    class="choice no"
+                    onclick="noLove()"
+                >
+                    💔 ไม่รัก
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+}
+
+
+/* =========================================
+   BUTTON SIZE
+========================================= */
+
+let yesScale = 1;
+
+let noScale = 1;
+
+
+/* =========================================
+   NO BUTTON
+========================================= */
+
+function noLove() {
+
+    const yes =
+        document.getElementById(
+            "yesButton"
+        );
+
+
+    const no =
+        document.getElementById(
+            "noButton"
+        );
+
+
+    const question =
+        document.getElementById(
+            "questionText"
+        );
+
+
+    /* ปุ่มรักใหญ่ขึ้น */
+
+    yesScale += .20;
+
+
+    yes.style.transform =
+        `scale(${yesScale})`;
+
+
+    /* ปุ่มไม่รักเล็กลง */
+
+    noScale -= .10;
+
+
+    if (noScale < .35) {
+
+        noScale = .35;
+
+    }
+
+
+    no.style.transform =
+        `scale(${noScale})`;
+
+
+    /* ข้อความ */
+
+    const messages = [
+
+        "แน่ใจนะ? 🥺",
+
+        "ลองคิดใหม่อีกทีนะ 💗",
+
+        "ต้นน้ำเสียใจแล้วนะ 😭",
+
+        "กดรักเถอะนะ ❤️",
+
+        "ปุ่มรักใหญ่ขึ้นแล้วนะ 😂",
+
+        "มินนี่ใจร้ายจัง 💔",
+
+        "รักต้นน้ำเถอะนะ 🥹❤️",
+
+        "เหลือปุ่มไม่รักนิดเดียวแล้ว 😂",
+
+        "รักต้นน้ำเถอะน้าาา ❤️"
+
+    ];
+
+
+    const index =
+        Math.min(
+
+            Math.floor(
+                (yesScale - 1) / .20
+            ),
+
+            messages.length - 1
+
+        );
+
+
+    question.innerHTML =
+        messages[index];
+
+
+    /* หัวใจเล็ก ๆ */
+
+    for (
+        let i = 0;
+        i < 5;
+        i++
+    ) {
+
+        setTimeout(
+            createHeart,
+            i * 70
+        );
+
+    }
+
+}
+
+
+
+/* =========================================
+   YES BUTTON
+========================================= */
+
+function yesLove() {
+
+    document.getElementById(
+        "questionArea"
+    ).innerHTML = `
+
+        <div class="success">
+
+            ❤️ 💕 ❤️
+
+            <br><br>
+
+            เย้! มินนี่รักต้นน้ำ 💖
+
+            <br>
+
+            เค้าก็รักมินนี่ที่สุดเลย
+
+            <br>
+
+            Ti amo con tutto il cuore ❤️
+
+            <br><br>
+
+            🫶 อยู่ด้วยกันไปนาน ๆ นะ
+
+        </div>
+
+    `;
+
+
+    /* หัวใจเต็มจอ */
+
+    for (
+        let i = 0;
+        i < 100;
+        i++
+    ) {
+
+        setTimeout(
+            createHeart,
+            i * 40
+        );
+
+    }
+
+}
+
+
+
+/* =========================================
+   CREATE HEART
+========================================= */
+
+function createHeart() {
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+
+    heart.className =
+        "floating-heart";
+
+
+    const hearts = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "💞",
+        "💓",
+        "💝"
+
+    ];
+
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random()
+                * hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random()
+        * 100
+        + "vw";
+
+
+    heart.style.fontSize =
+        (
+            18 +
+            Math.random()
+            * 35
+        )
+        + "px";
+
+
+    heart.style.animationDuration =
+        (
+            3 +
+            Math.random()
+            * 4
+        )
+        + "s";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(
+        () => heart.remove(),
+        7000
+    );
+
+}
+
+
+
+/* =========================================
+   AUTO HEART
+========================================= */
+
+setInterval(
+    createHeart,
+    1000
+);
+
+</script>
+
+
+</body>
+
+</html>
