@@ -4,875 +4,180 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ครบ 1 เดือนของเรา 💕</title>
-
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-body{
-    min-height:100vh;
-    font-family:Arial,"Tahoma",sans-serif;
-    background:
-        radial-gradient(circle at 15% 15%,rgba(255,255,255,.35),transparent 25%),
-        radial-gradient(circle at 85% 85%,rgba(255,70,130,.3),transparent 30%),
-        linear-gradient(135deg,#ff6fa8,#ff416d,#d91d5b);
-    color:white;
-    overflow-x:hidden;
-}
-
-/* ===== Background ===== */
-
-.bg{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
-}
-
-.glow{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(80px);
-    opacity:.35;
-}
-
-.glow1{
-    width:330px;
-    height:330px;
-    background:#ffd0e2;
-    top:-130px;
-    left:-100px;
-}
-
-.glow2{
-    width:380px;
-    height:380px;
-    background:#ff174f;
-    right:-140px;
-    bottom:-140px;
-}
-
-/* ===== Main ===== */
-
-.container{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:25px 15px;
-}
-
-.card{
-    width:100%;
-    max-width:760px;
-    padding:32px;
-    border-radius:32px;
-
-    background:rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.32);
-
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    box-shadow:
-        0 25px 80px rgba(80,0,30,.3),
-        inset 0 1px 0 rgba(255,255,255,.25);
-
-    text-align:center;
-}
-
-/* ===== Header ===== */
-
-.main-heart{
-    font-size:58px;
-    animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-    0%,100%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.13);
-    }
-}
-
-h1{
-    margin-top:5px;
-    font-size:38px;
-    text-shadow:0 5px 18px rgba(80,0,30,.3);
-}
-
-.subtitle{
-    margin-top:7px;
-    font-size:17px;
-    opacity:.9;
-}
-
-.anniversary{
-    display:inline-block;
-    margin:20px auto 24px;
-    padding:12px 22px;
-
-    border-radius:50px;
-
-    background:rgba(255,255,255,.18);
-    border:1px solid rgba(255,255,255,.35);
-
-    box-shadow:0 8px 25px rgba(100,0,30,.12);
-
-    font-size:18px;
-    font-weight:bold;
-}
-
-/* ===== PHOTO SECTION ===== */
-
-.photos{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-
-    max-width:650px;
-    margin:0 auto 25px;
-}
-
-.photo-card{
-    position:relative;
-
-    padding:8px;
-
-    border-radius:25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.75),
-            rgba(255,255,255,.18)
-        );
-
-    border:1px solid rgba(255,255,255,.65);
-
-    box-shadow:
-        0 15px 35px rgba(80,0,30,.25),
-        inset 0 0 0 1px rgba(255,255,255,.25);
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
-}
-
-.photo-card:hover{
-    transform:translateY(-6px) rotate(-1deg);
-
-    box-shadow:
-        0 22px 45px rgba(80,0,30,.3),
-        0 0 25px rgba(255,255,255,.2);
-}
-
-/* รูป */
-
-.photo{
-    width:100%;
-    height:280px;
-
-    display:block;
-
-    object-fit:cover;
-
-    border-radius:19px;
-
-    border:2px solid rgba(255,255,255,.55);
-
-    box-shadow:
-        inset 0 0 20px rgba(0,0,0,.12);
-
-    transition:transform .4s ease;
-}
-
-.photo-card:hover .photo{
-    transform:scale(1.025);
-}
-
-/* หัวใจตกแต่งกรอบ */
-
-.photo-card::before{
-    content:"♥";
-
-    position:absolute;
-    top:-12px;
-    right:-10px;
-
-    width:34px;
-    height:34px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:white;
-    color:#ff3d70;
-
-    font-size:17px;
-
-    box-shadow:0 5px 15px rgba(80,0,30,.2);
-
-    z-index:2;
-}
-
-.photo-card::after{
-    content:"💕";
-
-    position:absolute;
-    bottom:-9px;
-    left:-9px;
-
-    font-size:25px;
-
-    filter:drop-shadow(0 4px 5px rgba(80,0,30,.2));
-
-    z-index:2;
-}
-
-/* ===== Message ===== */
-
-.message{
-    margin:0 auto 23px;
-
-    max-width:650px;
-
-    padding:23px;
-
-    border-radius:22px;
-
-    background:rgba(255,255,255,.11);
-
-    border:1px solid rgba(255,255,255,.2);
-
-    line-height:1.9;
-
-    font-size:16px;
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.1);
-}
-
-.message strong{
-    font-size:21px;
-}
-
-/* ===== Button ===== */
-
-.open-button{
-    border:none;
-    cursor:pointer;
-
-    padding:15px 30px;
-
-    border-radius:50px;
-
-    background:white;
-    color:#dc2458;
-
-    font-size:17px;
-    font-weight:bold;
-
-    box-shadow:
-        0 10px 30px rgba(80,0,30,.25);
-
-    transition:.25s;
-}
-
-.open-button:hover{
-    transform:translateY(-3px) scale(1.04);
-    box-shadow:
-        0 15px 35px rgba(80,0,30,.3);
-}
-
-.open-button:active{
-    transform:scale(.97);
-}
-
-/* ===== Question ===== */
-
-.question-box{
-    margin-top:25px;
-    padding:25px;
-
-    border-radius:23px;
-
-    background:rgba(255,255,255,.13);
-
-    border:1px solid rgba(255,255,255,.2);
-
-    animation:appear .5s ease;
-}
-
-.question{
-    font-size:23px;
-    font-weight:bold;
-    margin-bottom:22px;
-}
-
-.choices{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:16px;
-}
-
-.choice{
-    border:none;
-    cursor:pointer;
-
-    padding:13px 27px;
-
-    border-radius:50px;
-
-    font-size:17px;
-    font-weight:bold;
-
-    transition:
-        transform .3s ease,
-        opacity .3s ease;
-}
-
-.yes{
-    background:white;
-    color:#e91e63;
-    box-shadow:0 8px 20px rgba(80,0,30,.18);
-}
-
-.no{
-    background:rgba(255,255,255,.18);
-    color:white;
-
-    border:1px solid rgba(255,255,255,.4);
-}
-
-/* ===== Success ===== */
-
-.success{
-    margin-top:25px;
-
-    padding:28px;
-
-    border-radius:24px;
-
-    background:rgba(255,255,255,.16);
-
-    border:1px solid rgba(255,255,255,.25);
-
-    font-size:21px;
-    font-weight:bold;
-
-    line-height:2;
-
-    box-shadow:
-        0 15px 35px rgba(80,0,30,.18);
-
-    animation:appear .7s ease;
-}
-
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:scale(.85);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-/* ===== Footer ===== */
-
-.footer{
-    margin-top:25px;
-
-    font-size:13px;
-    opacity:.7;
-}
-
-/* ===== Floating Hearts ===== */
-
-.floating-heart{
-    position:fixed;
-
-    bottom:-50px;
-
-    pointer-events:none;
-
-    z-index:999;
-
-    animation:floatUp linear forwards;
-}
-
-@keyframes floatUp{
-    from{
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity:1;
-    }
-
-    to{
-        transform:
-            translateY(-110vh)
-            rotate(360deg);
-
-        opacity:0;
-    }
-}
-
-/* ===== Mobile ===== */
-
-@media(max-width:600px){
-
-    .container{
-        padding:12px;
-    }
-
-    .card{
-        padding:22px 15px;
-        border-radius:26px;
-    }
-
-    .main-heart{
-        font-size:48px;
-    }
-
-    h1{
-        font-size:29px;
-    }
-
-    .anniversary{
-        font-size:15px;
-        padding:10px 17px;
-    }
-
-    .photos{
-        gap:12px;
-    }
-
-    .photo-card{
-        padding:6px;
-        border-radius:19px;
-    }
-
-    .photo{
-        height:190px;
-        border-radius:14px;
-    }
-
-    .photo-card::before{
-        width:28px;
-        height:28px;
-        font-size:14px;
-        top:-8px;
-        right:-7px;
-    }
-
-    .photo-card::after{
-        font-size:19px;
-        bottom:-7px;
-        left:-6px;
-    }
-
-    .message{
-        padding:18px;
-        font-size:14px;
-    }
-
-    .message strong{
-        font-size:18px;
-    }
-
-    .question{
-        font-size:20px;
-    }
-
-    .choice{
-        padding:11px 21px;
-        font-size:15px;
-    }
-
-    .success{
-        font-size:18px;
-        padding:22px 15px;
-    }
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%}
+body{font-family:Arial,"Tahoma",sans-serif;color:white;overflow-x:hidden;background:radial-gradient(circle at 15% 15%,rgba(255,255,255,.35),transparent 25%),radial-gradient(circle at 85% 85%,rgba(255,70,130,.3),transparent 30%),linear-gradient(135deg,#ff6fa8,#ff416d,#d91d5b)}
+.bg{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.glow{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
+.glow1{width:330px;height:330px;background:#ffd0e2;top:-130px;left:-100px}
+.glow2{width:380px;height:380px;background:#ff174f;right:-140px;bottom:-140px}
+.page{min-height:100vh;width:100%;display:flex;justify-content:center;align-items:center;padding:25px 15px;position:relative}
+.page.hidden{display:none}
+.card{width:100%;max-width:760px;padding:32px;border-radius:32px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 25px 80px rgba(80,0,30,.3),inset 0 1px 0 rgba(255,255,255,.25);text-align:center;animation:pageIn .55s ease}
+@keyframes pageIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.main-heart{font-size:58px;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+h1{margin-top:5px;font-size:38px;text-shadow:0 5px 18px rgba(80,0,30,.3)}
+.subtitle{margin-top:7px;font-size:17px;opacity:.9}
+.anniversary{display:inline-block;margin:20px auto 24px;padding:12px 22px;border-radius:50px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);box-shadow:0 8px 25px rgba(100,0,30,.12);font-size:18px;font-weight:bold}
+.photos{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:650px;margin:0 auto 25px}
+.photo-card{position:relative;padding:8px;border-radius:25px;background:linear-gradient(145deg,rgba(255,255,255,.75),rgba(255,255,255,.18));border:1px solid rgba(255,255,255,.65);box-shadow:0 15px 35px rgba(80,0,30,.25),inset 0 0 0 1px rgba(255,255,255,.25);transition:.35s ease}
+.photo-card:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 22px 45px rgba(80,0,30,.3),0 0 25px rgba(255,255,255,.2)}
+.photo{width:100%;height:280px;display:block;object-fit:cover;border-radius:19px;border:2px solid rgba(255,255,255,.55);box-shadow:inset 0 0 20px rgba(0,0,0,.12);transition:transform .4s ease}
+.photo-card:hover .photo{transform:scale(1.025)}
+.photo-card::before{content:"♥";position:absolute;top:-12px;right:-10px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:white;color:#ff3d70;font-size:17px;box-shadow:0 5px 15px rgba(80,0,30,.2);z-index:2}
+.photo-card::after{content:"💕";position:absolute;bottom:-9px;left:-9px;font-size:25px;filter:drop-shadow(0 4px 5px rgba(80,0,30,.2));z-index:2}
+.message{margin:0 auto 23px;max-width:650px;padding:23px;border-radius:22px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);line-height:1.9;font-size:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.message strong{font-size:21px}
+.open-button,.back-button{border:none;cursor:pointer;padding:15px 30px;border-radius:50px;font-size:17px;font-weight:bold;transition:.25s}
+.open-button{background:white;color:#dc2458;box-shadow:0 10px 30px rgba(80,0,30,.25)}
+.open-button:hover,.back-button:hover{transform:translateY(-3px) scale(1.04)}
+.open-button:active,.back-button:active{transform:scale(.97)}
+.back-button{margin-top:22px;background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.4)}
+.question-card{max-width:680px}
+.question-heart{font-size:72px;animation:pulse 1.5s infinite}
+.question-title{margin:10px 0 28px;font-size:32px;line-height:1.5;text-shadow:0 5px 18px rgba(80,0,30,.3)}
+.choices{min-height:110px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.choice{border:none;cursor:pointer;padding:14px 30px;border-radius:50px;font-size:18px;font-weight:bold;transition:transform .3s ease,opacity .3s ease,box-shadow .3s ease}
+.yes{background:white;color:#e91e63;box-shadow:0 10px 25px rgba(80,0,30,.2)}
+.no{background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.4)}
+.hint{margin-top:25px;font-size:14px;opacity:.75}
+.success-card{max-width:680px}
+.success-heart{font-size:82px;animation:successPop .8s ease infinite alternate}
+@keyframes successPop{from{transform:scale(1)}to{transform:scale(1.12)}}
+.success-title{margin:10px 0 18px;font-size:35px}
+.success-message{padding:24px;border-radius:23px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);font-size:20px;line-height:2}
+.footer{margin-top:25px;font-size:13px;opacity:.7}
+.floating-heart{position:fixed;bottom:-50px;pointer-events:none;z-index:999;animation:floatUp linear forwards}
+@keyframes floatUp{from{transform:translateY(0) rotate(0deg);opacity:1}to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+@media(max-width:600px){.page{padding:12px}.card{padding:22px 15px;border-radius:26px}.main-heart{font-size:48px}h1{font-size:29px}.anniversary{font-size:15px;padding:10px 17px}.photos{gap:12px}.photo-card{padding:6px;border-radius:19px}.photo{height:190px;border-radius:14px}.photo-card::before{width:28px;height:28px;font-size:14px;top:-8px;right:-7px}.photo-card::after{font-size:19px;bottom:-7px;left:-6px}.message{padding:18px;font-size:14px}.message strong{font-size:18px}.question-heart{font-size:58px}.question-title{font-size:25px}.choice{padding:12px 22px;font-size:16px}.success-heart{font-size:65px}.success-title{font-size:28px}.success-message{font-size:17px;padding:20px 15px}}
 </style>
 </head>
-
 <body>
+<div class="bg"><div class="glow glow1"></div><div class="glow glow2"></div></div>
 
-<div class="bg">
-    <div class="glow glow1"></div>
-    <div class="glow glow2"></div>
-</div>
-
-<div class="container">
-
+<section id="homePage" class="page">
 <div class="card">
+<div class="main-heart">❤️</div>
+<h1>    ถึง มินนี่ 💕</h1>
+<div class="subtitle">จาก ต้นน้ำ</div>
+<div class="anniversary">💗 ครบรอบ 1 เดือนของเรา 💗</div>
 
-    <div class="main-heart">
-        ❤️
-    </div>
-
-    <h1>
-        ถึง มินนี่ 💕
-    </h1>
-
-    <div class="subtitle">
-        จาก ต้นน้ำ
-    </div>
-
-    <div class="anniversary">
-        💗 ครบรอบ 1 เดือนของเรา 💗
-    </div>
-
-
-    <!-- =========================
-         รูปของเรา
-         เปลี่ยนชื่อ photo1.jpg
-         และ photo2.jpg ได้ตรงนี้
-    ========================== -->
-
-    <div class="photos">
-
-        <div class="photo-card">
-            <img
-                src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260813_091045_Instagram.jpg"
-                class="photo"
-                alt="รูปของเรา 1"
-            >
-        </div>
-
-        <div class="photo-card">
-            <img
-                src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260912_223101_Instagram.jpgๆ"
-                class="photo"
-                alt="รูปของเรา 2"
-            >
-        </div>
-
-    </div>
-
-
-    <!-- ข้อความ -->
-
-    <div class="message">
-
-        <strong>
-            สุขสันต์ครบรอบ 1 เดือนนะมินนี่ ❤️
-        </strong>
-
-        <br><br>
-
-        ขอบคุณที่เข้ามาเป็นความสุข
-        ของต้นน้ำในทุก ๆ วันนะ 💕
-
-        <br>
-
-        ถึงเราจะมีงอนกันบ้าง
-        ทะเลาะกันบ้าง
-
-        <br>
-
-        แต่ต้นน้ำก็ยังรักมินนี่
-        เหมือนเดิมเสมอ ❤️
-
-        <br>
-
-        ขอบคุณสำหรับทุกช่วงเวลา
-        ที่เราได้อยู่ด้วยกันนะ 🫶
-
-        <br>
-
-        ขอให้เราได้สร้างความทรงจำดี ๆ
-        ด้วยกันไปอีกนาน ๆ เลยนะ
-
-        <br><br>
-
-        <strong>
-            รักมินนี่นะ ❤️
-        </strong>
-
-    </div>
-
-
-    <!-- ปุ่มคำถาม -->
-
-    <button
-        class="open-button"
-        onclick="openQuestion()"
-    >
-        💌 มีคำถามอยากถาม
-    </button>
-
-
-    <div id="questionArea"></div>
-
-
-    <div class="footer">
-        Made with ❤️ by ต้นน้ำ
-    </div>
-
-</div>
+<div class="photos">
+<div class="photo-card"><img src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260813_091045_Instagram.jpg" class="photo" alt="รูปของเรา 1"></div>
+<div class="photo-card"><img src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260912_223101_Instagram.jpg" class="photo" alt="รูปของเรา 2"></div>
 </div>
 
+<div class="message">
+<strong>สุขสันต์ครบรอบ 1 เดือนนะมินนี่ ❤️</strong><br><br>
+ขอบคุณที่เข้ามาเป็นความสุขของต้นน้ำในทุก ๆ วันนะ 💕<br>
+ถึงเราจะมีงอนกันบ้าง <br>
+แต่ต้นน้ำก็ยังรักมินนี่เหมือนเดิมเสมอ ❤️<br>
+ขอบคุณสำหรับทุกช่วงเวลาที่เราได้อยู่ด้วยกันนะ 🫶<br>
+ขอให้เราได้สร้างความทรงจำดี ๆ ด้วยกันไปอีกนาน ๆ เลยนะ<br><br>
+<strong>รักมินนี่นะ ❤️</strong>
+</div>
+
+<button class="open-button" onclick="showQuestion()">💌 มีคำถามอยากถาม</button>
+<div class="footer">Made with ❤️ by ต้นน้ำ</div>
+</div>
+</section>
+
+<section id="questionPage" class="page hidden">
+<div class="card question-card">
+<div class="question-heart">💗</div>
+<div class="question-title" id="questionTitle">มินนี่รักต้นน้ำไหม? 💕</div>
+<div class="choices">
+<button id="yesButton" class="choice yes" onclick="yesLove()">❤️ รัก</button>
+<button id="noButton" class="choice no" onclick="noLove()">💔 ไม่รัก</button>
+</div>
+<div class="hint">ลองเลือกคำตอบดูนะ 🥺💕</div>
+<button class="back-button" onclick="showHome()">← กลับไปหน้าหลัก</button>
+</div>
+</section>
+
+<section id="successPage" class="page hidden">
+<div class="card success-card">
+<div class="success-heart">💖</div>
+<div class="success-title">เย้! มินนี่รักต้นน้ำ 💕</div>
+<div class="success-message">
+❤️ 💕 ❤️<br><br>
+เค้าก็รักมินนี่ที่สุดเลย<br>
+Ti amo con tutto il cuore ❤️<br><br>
+🫶 อยู่ด้วยกันไปนาน ๆ นะ<br>
+Happy 1 Month Anniversary 💗
+</div>
+<button class="back-button" onclick="showHome()">← กลับไปหน้าหลัก</button>
+</div>
+</section>
 
 <script>
+let yesScale=1;
+let noScale=1;
+const noMessages=[
+"แน่ใจนะ? 🥺","ลองคิดใหม่อีกทีนะ 💗","ต้นน้ำเสียใจแล้วนะ 😭","กดรักเถอะนะ ❤️",
+"ปุ่มรักใหญ่ขึ้นแล้วนะ 😂","มินนี่ใจร้ายจัง 💔","รักต้นน้ำเถอะนะ 🥹❤️",
+"เหลือปุ่มไม่รักนิดเดียวแล้ว 😂","รักต้นน้ำเถอะน้าาา ❤️"
+];
 
-/* =========================
-   เปิดคำถาม
-========================= */
-
-function openQuestion(){
-
-    document.getElementById("questionArea").innerHTML = `
-
-        <div class="question-box">
-
-            <div
-                class="question"
-                id="questionText"
-            >
-                มินนี่รักต้นน้ำไหม? 💕
-            </div>
-
-            <div class="choices">
-
-                <button
-                    id="yesButton"
-                    class="choice yes"
-                    onclick="yesLove()"
-                >
-                    ❤️ รัก
-                </button>
-
-                <button
-                    id="noButton"
-                    class="choice no"
-                    onclick="noLove()"
-                >
-                    💔 ไม่รัก
-                </button>
-
-            </div>
-
-        </div>
-    `;
+function hideAllPages(){
+ document.getElementById("homePage").classList.add("hidden");
+ document.getElementById("questionPage").classList.add("hidden");
+ document.getElementById("successPage").classList.add("hidden");
 }
-
-
-/* =========================
-   ปุ่มไม่รัก
-========================= */
-
-let yesScale = 1;
-let noScale = 1;
-
+function showHome(){
+ hideAllPages();
+ document.getElementById("homePage").classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function showQuestion(){
+ hideAllPages();
+ document.getElementById("questionPage").classList.remove("hidden");
+ resetButtons();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function resetButtons(){
+ yesScale=1; noScale=1;
+ const yes=document.getElementById("yesButton");
+ const no=document.getElementById("noButton");
+ const question=document.getElementById("questionTitle");
+ if(yes){yes.style.transform="scale(1)";yes.style.opacity="1";yes.innerHTML="❤️ รัก";}
+ if(no){no.style.transform="scale(1)";no.style.opacity="1";no.innerHTML="💔 ไม่รัก";}
+ if(question) question.innerHTML="มินนี่รักต้นน้ำไหม? 💕";
+}
 function noLove(){
-
-    const yes =
-        document.getElementById("yesButton");
-
-    const no =
-        document.getElementById("noButton");
-
-    const question =
-        document.getElementById("questionText");
-
-    if(!yes || !no) return;
-
-
-    yesScale += 0.20;
-
-    yes.style.transform =
-        `scale(${yesScale})`;
-
-
-    noScale -= 0.10;
-
-    if(noScale < 0.35){
-        noScale = 0.35;
-    }
-
-    no.style.transform =
-        `scale(${noScale})`;
-
-
-    const messages = [
-
-        "แน่ใจนะ? 🥺",
-
-        "ลองคิดใหม่อีกทีนะ 💗",
-
-        "ต้นน้ำเสียใจแล้วนะ 😭",
-
-        "กดรักเถอะนะ ❤️",
-
-        "ปุ่มรักใหญ่ขึ้นแล้วนะ 😂",
-
-        "มินนี่ใจร้ายจัง 💔",
-
-        "รักต้นน้ำเถอะนะ 🥹❤️",
-
-        "เหลือปุ่มไม่รักนิดเดียวแล้ว 😂",
-
-        "รักต้นน้ำเถอะน้าาา ❤️"
-
-    ];
-
-
-    const index =
-        Math.min(
-            Math.floor(
-                (yesScale - 1) / 0.20
-            ),
-            messages.length - 1
-        );
-
-
-    question.innerHTML =
-        messages[index];
-
-
-    for(let i=0;i<5;i++){
-
-        setTimeout(
-            createHeart,
-            i * 70
-        );
-
-    }
+ const yes=document.getElementById("yesButton");
+ const no=document.getElementById("noButton");
+ const question=document.getElementById("questionTitle");
+ if(!yes||!no||!question)return;
+ yesScale=Math.min(3.5,yesScale+0.20);
+ yes.style.transform=`scale(${yesScale})`;
+ noScale=Math.max(0.35,noScale-0.10);
+ no.style.transform=`scale(${noScale})`;
+ no.style.opacity=Math.max(0.35,noScale);
+ const index=Math.min(Math.floor((yesScale-1)/0.20),noMessages.length-1);
+ question.innerHTML=noMessages[index];
+ for(let i=0;i<5;i++)setTimeout(createHeart,i*70);
 }
-
-
-/* =========================
-   ปุ่มรัก
-========================= */
-
 function yesLove(){
-
-    document.getElementById("questionArea").innerHTML = `
-
-        <div class="success">
-
-            ❤️ 💕 ❤️
-
-            <br><br>
-
-            เย้! มินนี่รักต้นน้ำ 💖
-
-            <br>
-
-            เค้าก็รักมินนี่ที่สุดเลย
-
-            <br>
-
-            Ti amo con tutto il cuore ❤️
-
-            <br><br>
-
-            🫶 อยู่ด้วยกันไปนาน ๆ นะ
-
-            <br>
-
-            Happy 1 Month Anniversary 💗
-
-        </div>
-
-    `;
-
-
-    /* หัวใจฉลอง */
-
-    for(let i=0;i<100;i++){
-
-        setTimeout(
-            createHeart,
-            i * 40
-        );
-
-    }
+ hideAllPages();
+ document.getElementById("successPage").classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+ for(let i=0;i<80;i++)setTimeout(createHeart,i*40);
 }
-
-
-/* =========================
-   สร้างหัวใจลอย
-========================= */
-
 function createHeart(){
-
-    const heart =
-        document.createElement("div");
-
-    heart.className =
-        "floating-heart";
-
-
-    const hearts = [
-        "❤️",
-        "💕",
-        "💗",
-        "💖",
-        "💘",
-        "💞",
-        "💓",
-        "💝"
-    ];
-
-
-    heart.innerHTML =
-        hearts[
-            Math.floor(
-                Math.random() *
-                hearts.length
-            )
-        ];
-
-
-    heart.style.left =
-        Math.random() * 100 + "vw";
-
-
-    heart.style.fontSize =
-        (18 + Math.random() * 35) + "px";
-
-
-    heart.style.animationDuration =
-        (3 + Math.random() * 4) + "s";
-
-
-    document.body.appendChild(
-        heart
-    );
-
-
-    setTimeout(
-        () => heart.remove(),
-        7000
-    );
+ const heart=document.createElement("div");
+ heart.className="floating-heart";
+ const hearts=["❤️","💕","💗","💖","💘","💞","💓","💝"];
+ heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+ heart.style.left=Math.random()*100+"vw";
+ heart.style.fontSize=(18+Math.random()*35)+"px";
+ heart.style.animationDuration=(3+Math.random()*4)+"s";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),7000);
 }
-
-
-/* หัวใจพื้นหลัง */
-
-setInterval(
-    createHeart,
-    1200
-);
-
+setInterval(createHeart,1200);
 </script>
-
 </body>
 </html>
