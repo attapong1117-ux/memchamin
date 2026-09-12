@@ -3,181 +3,1983 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ครบ 1 เดือนของเรา 💕</title>
+<title>ถึง มินนี่ 💕</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;min-height:100%}
-body{font-family:Arial,"Tahoma",sans-serif;color:white;overflow-x:hidden;background:radial-gradient(circle at 15% 15%,rgba(255,255,255,.35),transparent 25%),radial-gradient(circle at 85% 85%,rgba(255,70,130,.3),transparent 30%),linear-gradient(135deg,#ff6fa8,#ff416d,#d91d5b)}
-.bg{position:fixed;inset:0;overflow:hidden;pointer-events:none}
-.glow{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
-.glow1{width:330px;height:330px;background:#ffd0e2;top:-130px;left:-100px}
-.glow2{width:380px;height:380px;background:#ff174f;right:-140px;bottom:-140px}
-.page{min-height:100vh;width:100%;display:flex;justify-content:center;align-items:center;padding:25px 15px;position:relative}
-.page.hidden{display:none}
-.card{width:100%;max-width:760px;padding:32px;border-radius:32px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 25px 80px rgba(80,0,30,.3),inset 0 1px 0 rgba(255,255,255,.25);text-align:center;animation:pageIn .55s ease}
-@keyframes pageIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
-.main-heart{font-size:58px;animation:pulse 1.5s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
-h1{margin-top:5px;font-size:38px;text-shadow:0 5px 18px rgba(80,0,30,.3)}
-.subtitle{margin-top:7px;font-size:17px;opacity:.9}
-.anniversary{display:inline-block;margin:20px auto 24px;padding:12px 22px;border-radius:50px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);box-shadow:0 8px 25px rgba(100,0,30,.12);font-size:18px;font-weight:bold}
-.photos{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:650px;margin:0 auto 25px}
-.photo-card{position:relative;padding:8px;border-radius:25px;background:linear-gradient(145deg,rgba(255,255,255,.75),rgba(255,255,255,.18));border:1px solid rgba(255,255,255,.65);box-shadow:0 15px 35px rgba(80,0,30,.25),inset 0 0 0 1px rgba(255,255,255,.25);transition:.35s ease}
-.photo-card:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 22px 45px rgba(80,0,30,.3),0 0 25px rgba(255,255,255,.2)}
-.photo{width:100%;height:280px;display:block;object-fit:cover;border-radius:19px;border:2px solid rgba(255,255,255,.55);box-shadow:inset 0 0 20px rgba(0,0,0,.12);transition:transform .4s ease}
-.photo-card:hover .photo{transform:scale(1.025)}
-.photo-card::before{content:"♥";position:absolute;top:-12px;right:-10px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:white;color:#ff3d70;font-size:17px;box-shadow:0 5px 15px rgba(80,0,30,.2);z-index:2}
-.photo-card::after{content:"💕";position:absolute;bottom:-9px;left:-9px;font-size:25px;filter:drop-shadow(0 4px 5px rgba(80,0,30,.2));z-index:2}
-.message{margin:0 auto 23px;max-width:650px;padding:23px;border-radius:22px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);line-height:1.9;font-size:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
-.message strong{font-size:21px}
-.open-button,.back-button{border:none;cursor:pointer;padding:15px 30px;border-radius:50px;font-size:17px;font-weight:bold;transition:.25s}
-.open-button{background:white;color:#dc2458;box-shadow:0 10px 30px rgba(80,0,30,.25)}
-.open-button:hover,.back-button:hover{transform:translateY(-3px) scale(1.04)}
-.open-button:active,.back-button:active{transform:scale(.97)}
-.back-button{margin-top:22px;background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.4)}
-.question-card{max-width:680px}
-.question-heart{font-size:72px;animation:pulse 1.5s infinite}
-.question-title{margin:10px 0 28px;font-size:32px;line-height:1.5;text-shadow:0 5px 18px rgba(80,0,30,.3)}
-.choices{min-height:110px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
-.choice{border:none;cursor:pointer;padding:14px 30px;border-radius:50px;font-size:18px;font-weight:bold;transition:transform .3s ease,opacity .3s ease,box-shadow .3s ease}
-.yes{background:white;color:#e91e63;box-shadow:0 10px 25px rgba(80,0,30,.2)}
-.no{background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.4)}
-.hint{margin-top:25px;font-size:14px;opacity:.75}
-.success-card{max-width:680px}
-.success-heart{font-size:82px;animation:successPop .8s ease infinite alternate}
-@keyframes successPop{from{transform:scale(1)}to{transform:scale(1.12)}}
-.success-title{margin:10px 0 18px;font-size:35px}
-.success-message{padding:24px;border-radius:23px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);font-size:20px;line-height:2}
-.footer{margin-top:25px;font-size:13px;opacity:.7}
-.floating-heart{position:fixed;bottom:-50px;pointer-events:none;z-index:999;animation:floatUp linear forwards}
-@keyframes floatUp{from{transform:translateY(0) rotate(0deg);opacity:1}to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
-@media(max-width:600px){.page{padding:12px}.card{padding:22px 15px;border-radius:26px}.main-heart{font-size:48px}h1{font-size:29px}.anniversary{font-size:15px;padding:10px 17px}.photos{gap:12px}.photo-card{padding:6px;border-radius:19px}.photo{height:190px;border-radius:14px}.photo-card::before{width:28px;height:28px;font-size:14px;top:-8px;right:-7px}.photo-card::after{font-size:19px;bottom:-7px;left:-6px}.message{padding:18px;font-size:14px}.message strong{font-size:18px}.question-heart{font-size:58px}.question-title{font-size:25px}.choice{padding:12px 22px;font-size:16px}.success-heart{font-size:65px}.success-title{font-size:28px}.success-message{font-size:17px;padding:20px 15px}}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    min-height:100%;
+}
+
+body{
+    font-family:Arial,"Tahoma",sans-serif;
+    color:#fff;
+    overflow-x:hidden;
+    background:
+        radial-gradient(circle at 15% 15%,rgba(255,255,255,.35),transparent 25%),
+        radial-gradient(circle at 85% 85%,rgba(255,70,130,.3),transparent 30%),
+        linear-gradient(135deg,#ff6fa8,#ff416d,#d91d5b);
+}
+
+.hidden{
+    display:none!important;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.35;
+}
+
+.glow1{
+    width:330px;
+    height:330px;
+    background:#ffd0e2;
+    top:-130px;
+    left:-100px;
+}
+
+.glow2{
+    width:380px;
+    height:380px;
+    background:#ff174f;
+    right:-140px;
+    bottom:-140px;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px 15px;
+    position:relative;
+}
+
+.card{
+    width:100%;
+    max-width:760px;
+    padding:32px;
+    border-radius:32px;
+
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.32);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 25px 80px rgba(80,0,30,.3),
+        inset 0 1px 0 rgba(255,255,255,.25);
+
+    text-align:center;
+
+    animation:pageIn .6s ease;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+
+#envelopePage{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,150,190,.3),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #ff6fa8,
+            #ff416d,
+            #d91d5b
+        );
+}
+
+.envelope-wrap{
+    width:100%;
+    padding:20px;
+    text-align:center;
+}
+
+.envelope-title{
+    font-size:34px;
+    margin-bottom:40px;
+
+    text-shadow:
+        0 5px 20px rgba(80,0,30,.3);
+}
+
+.envelope{
+    width:420px;
+    height:285px;
+
+    margin:auto;
+
+    position:relative;
+
+    cursor:pointer;
+
+    filter:
+        drop-shadow(
+            0 25px 45px
+            rgba(70,0,30,.4)
+        );
+
+    transition:
+        transform .3s ease;
+}
+
+.envelope:hover{
+    transform:
+        translateY(-8px)
+        scale(1.03);
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter{
+    position:absolute;
+
+    width:345px;
+    height:220px;
+
+    left:37px;
+    top:30px;
+
+    background:#fff;
+
+    border-radius:10px;
+
+    color:#d91d5b;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+    font-size:25px;
+
+    box-shadow:
+        0 8px 22px
+        rgba(80,0,30,.2);
+
+    z-index:1;
+
+    transition:
+        transform .8s ease,
+        z-index .01s linear;
+}
+
+/* =========================
+   ENVELOPE BODY
+========================= */
+
+.envelope-body{
+    position:absolute;
+
+    inset:0;
+
+    background:#ffb0c9;
+
+    border-radius:16px;
+
+    border:
+        2px solid
+        rgba(255,255,255,.6);
+
+    overflow:hidden;
+
+    z-index:5;
+}
+
+/* =========================
+   FRONT FOLDS
+========================= */
+
+.envelope-body:before,
+.envelope-body:after{
+    content:"";
+
+    position:absolute;
+
+    bottom:-2px;
+
+    width:0;
+    height:0;
+
+    border-style:solid;
+
+    z-index:7;
+}
+
+.envelope-body:before{
+    left:0;
+
+    border-width:
+        143px
+        210px
+        0
+        0;
+
+    border-color:
+        #ff86ad
+        transparent
+        transparent
+        transparent;
+}
+
+.envelope-body:after{
+    right:0;
+
+    border-width:
+        0
+        210px
+        143px
+        0;
+
+    border-color:
+        transparent
+        #ff9abb
+        transparent
+        transparent;
+}
+
+/* =========================
+   FLAP
+========================= */
+
+.flap{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:0;
+    height:0;
+
+    border-left:
+        210px solid transparent;
+
+    border-right:
+        210px solid transparent;
+
+    border-top:
+        160px solid #ff8eaf;
+
+    transform-origin:
+        top center;
+
+    transition:
+        transform .8s ease;
+
+    z-index:9;
+}
+
+.envelope.open .flap{
+    transform:
+        rotateX(180deg);
+}
+
+/* =========================
+   HEART SEAL
+========================= */
+
+.heart-seal{
+    position:absolute;
+
+    left:50%;
+    top:118px;
+
+    transform:
+        translateX(-50%);
+
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#e91e63;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+
+    box-shadow:
+        0 7px 20px
+        rgba(80,0,30,.25);
+
+    transition:.4s ease;
+
+    z-index:10;
+}
+
+.envelope.open .heart-seal{
+    opacity:0;
+
+    transform:
+        translateX(-50%)
+        scale(.5);
+}
+
+/* LETTER OPEN */
+
+.envelope.open .letter{
+    z-index:8;
+
+    transform:
+        translateY(-125px);
+}
+
+.envelope-hint{
+    margin-top:38px;
+
+    font-size:17px;
+
+    opacity:.9;
+
+    animation:
+        hintPulse 1.5s infinite;
+}
+
+@keyframes hintPulse{
+    0%,100%{
+        opacity:.7;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+/* =========================
+   HOME
+========================= */
+
+.main-heart{
+    font-size:58px;
+
+    animation:
+        pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.13);
+    }
+}
+
+h1{
+    margin-top:5px;
+
+    font-size:38px;
+
+    text-shadow:
+        0 5px 18px
+        rgba(80,0,30,.3);
+}
+
+.subtitle{
+    margin-top:7px;
+
+    font-size:17px;
+
+    opacity:.9;
+}
+
+.anniversary{
+    display:inline-block;
+
+    margin:
+        20px auto 24px;
+
+    padding:
+        12px 22px;
+
+    border-radius:50px;
+
+    background:
+        rgba(255,255,255,.18);
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    box-shadow:
+        0 8px 25px
+        rgba(100,0,30,.12);
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photos{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+
+    max-width:650px;
+
+    margin:
+        0 auto 25px;
+}
+
+.photo-card{
+    position:relative;
+
+    padding:8px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.75),
+            rgba(255,255,255,.18)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.65);
+
+    box-shadow:
+        0 15px 35px
+        rgba(80,0,30,.25);
+
+    transition:.35s ease;
+}
+
+.photo-card:hover{
+    transform:
+        translateY(-6px)
+        rotate(-1deg);
+}
+
+.photo{
+    width:100%;
+    height:280px;
+
+    display:block;
+
+    object-fit:cover;
+
+    border-radius:19px;
+
+    border:
+        2px solid
+        rgba(255,255,255,.55);
+}
+
+.photo-card:before{
+    content:"♥";
+
+    position:absolute;
+
+    top:-12px;
+    right:-10px;
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#ff3d70;
+
+    font-size:17px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(80,0,30,.2);
+
+    z-index:2;
+}
+
+.photo-card:after{
+    content:"💕";
+
+    position:absolute;
+
+    bottom:-9px;
+    left:-9px;
+
+    font-size:25px;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message{
+    margin:
+        0 auto 23px;
+
+    max-width:650px;
+
+    padding:23px;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.11);
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    line-height:1.9;
+
+    font-size:16px;
+}
+
+.message strong{
+    font-size:21px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.open-button,
+.back-button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:
+        15px 30px;
+
+    border-radius:50px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+.open-button{
+
+    background:white;
+
+    color:#dc2458;
+
+    box-shadow:
+        0 10px 30px
+        rgba(80,0,30,.25);
+}
+
+.open-button:hover,
+.back-button:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.04);
+}
+
+.back-button{
+
+    margin-top:22px;
+
+    background:
+        rgba(255,255,255,.18);
+
+    color:white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.4);
+}
+
+/* =========================
+   QUESTION
+========================= */
+
+.question-card,
+.success-card{
+    max-width:680px;
+}
+
+.question-heart{
+    font-size:72px;
+
+    animation:
+        pulse 1.5s infinite;
+}
+
+.question-title{
+
+    margin:
+        10px 0 28px;
+
+    font-size:32px;
+
+    line-height:1.5;
+}
+
+.choices{
+
+    min-height:110px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+}
+
+.choice{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:
+        14px 30px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+.yes{
+
+    background:white;
+
+    color:#e91e63;
+
+    box-shadow:
+        0 10px 25px
+        rgba(80,0,30,.2);
+}
+
+.no{
+
+    background:
+        rgba(255,255,255,.18);
+
+    color:white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.4);
+}
+
+.hint{
+
+    margin-top:25px;
+
+    font-size:14px;
+
+    opacity:.75;
+}
+
+/* =========================
+   SUCCESS
+========================= */
+
+.success-heart{
+
+    font-size:82px;
+
+    animation:
+        successPop .8s ease
+        infinite alternate;
+}
+
+@keyframes successPop{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.12);
+    }
+}
+
+.success-title{
+
+    margin:
+        10px 0 18px;
+
+    font-size:35px;
+}
+
+.success-message{
+
+    padding:24px;
+
+    border-radius:23px;
+
+    background:
+        rgba(255,255,255,.13);
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    font-size:20px;
+
+    line-height:2;
+}
+
+.footer{
+
+    margin-top:25px;
+
+    font-size:13px;
+
+    opacity:.7;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    animation:
+        floatUp linear forwards;
+}
+
+@keyframes floatUp{
+
+    from{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+#musicButton{
+
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        rgba(255,255,255,.2);
+
+    border:
+        1px solid
+        rgba(255,255,255,.5);
+
+    backdrop-filter:
+        blur(12px);
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    z-index:99999;
+
+    box-shadow:
+        0 8px 25px
+        rgba(80,0,30,.25);
+
+    transition:.25s;
+}
+
+#musicButton:hover{
+    transform:scale(1.1);
+}
+
+#musicButton.playing{
+    animation:
+        musicPulse 1s infinite;
+}
+
+@keyframes musicPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+.music-label{
+
+    position:fixed;
+
+    right:20px;
+    bottom:88px;
+
+    padding:
+        8px 13px;
+
+    border-radius:20px;
+
+    background:
+        rgba(80,0,30,.35);
+
+    backdrop-filter:
+        blur(10px);
+
+    font-size:12px;
+
+    z-index:99998;
+
+    opacity:.8;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .page{
+        padding:12px;
+    }
+
+    .card{
+        padding:
+            22px 15px;
+
+        border-radius:26px;
+    }
+
+    .envelope-title{
+
+        font-size:25px;
+
+        margin-bottom:30px;
+    }
+
+    .envelope{
+
+        width:330px;
+        height:225px;
+    }
+
+    .flap{
+
+        border-left-width:
+            165px;
+
+        border-right-width:
+            165px;
+
+        border-top-width:
+            125px;
+    }
+
+    .envelope-body:before{
+
+        border-width:
+            113px
+            165px
+            0
+            0;
+    }
+
+    .envelope-body:after{
+
+        border-width:
+            0
+            165px
+            113px
+            0;
+    }
+
+    .letter{
+
+        width:270px;
+        height:175px;
+
+        left:30px;
+        top:24px;
+
+        font-size:20px;
+    }
+
+    .heart-seal{
+
+        top:90px;
+
+        width:55px;
+        height:55px;
+
+        font-size:27px;
+    }
+
+    .envelope.open .letter{
+
+        transform:
+            translateY(-100px);
+    }
+
+    .envelope-hint{
+        font-size:15px;
+    }
+
+    .main-heart{
+        font-size:48px;
+    }
+
+    h1{
+        font-size:29px;
+    }
+
+    .anniversary{
+        font-size:15px;
+
+        padding:
+            10px 17px;
+    }
+
+    .photos{
+        gap:12px;
+    }
+
+    .photo-card{
+        padding:6px;
+        border-radius:19px;
+    }
+
+    .photo{
+        height:190px;
+        border-radius:14px;
+    }
+
+    .photo-card:before{
+
+        width:28px;
+        height:28px;
+
+        font-size:14px;
+
+        top:-8px;
+        right:-7px;
+    }
+
+    .photo-card:after{
+        font-size:19px;
+    }
+
+    .message{
+        padding:18px;
+        font-size:14px;
+    }
+
+    .message strong{
+        font-size:18px;
+    }
+
+    .question-heart{
+        font-size:58px;
+    }
+
+    .question-title{
+        font-size:25px;
+    }
+
+    .choice{
+
+        padding:
+            12px 22px;
+
+        font-size:16px;
+    }
+
+    .success-heart{
+        font-size:65px;
+    }
+
+    .success-title{
+        font-size:28px;
+    }
+
+    .success-message{
+
+        font-size:17px;
+
+        padding:
+            20px 15px;
+    }
+
+    #musicButton{
+
+        width:52px;
+        height:52px;
+
+        right:15px;
+        bottom:15px;
+
+        font-size:22px;
+    }
+
+    .music-label{
+
+        right:14px;
+        bottom:75px;
+    }
+}
 </style>
 </head>
+
 <body>
-<div class="bg"><div class="glow glow1"></div><div class="glow glow2"></div></div>
 
-<section id="homePage" class="page">
+<!-- BACKGROUND -->
+
+<div class="bg">
+
+    <div class="glow glow1"></div>
+
+    <div class="glow glow2"></div>
+
+</div>
+
+
+<!-- =========================
+     ENVELOPE PAGE
+========================= -->
+
+<section id="envelopePage">
+
+    <div class="envelope-wrap">
+
+        <div class="envelope-title">
+            💌 มีจดหมายถึงมินนี่ 💕
+        </div>
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openEnvelope()"
+        >
+
+            <div class="letter">
+                ถึง มินนี่ ❤️
+            </div>
+
+            <div class="envelope-body"></div>
+
+            <div class="flap"></div>
+
+            <div class="heart-seal">
+                ❤️
+            </div>
+
+        </div>
+
+        <div class="envelope-hint">
+            💕 กดที่ซองเพื่อเปิดจดหมาย 💕
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOME PAGE
+========================= -->
+
+<section
+    id="homePage"
+    class="page hidden"
+>
+
 <div class="card">
-<div class="main-heart">❤️</div>
-<h1>    ถึง มินนี่ 💕</h1>
-<div class="subtitle">จาก ต้นน้ำ</div>
-<div class="anniversary">💗 ครบรอบ 1 เดือนของเรา 💗</div>
 
-<div class="photos">
-<div class="photo-card"><img src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260813_091045_Instagram.jpg" class="photo" alt="รูปของเรา 1"></div>
-<div class="photo-card"><img src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260912_223101_Instagram.jpg" class="photo" alt="รูปของเรา 2"></div>
+    <div class="main-heart">
+        ❤️
+    </div>
+
+    <h1>
+        ถึง มินนี่ 💕
+    </h1>
+
+    <div class="subtitle">
+        จาก ต้นน้ำ
+    </div>
+
+    <div class="anniversary">
+        💗 ครบรอบ 1 เดือนของเรา 💗
+    </div>
+
+
+    <!-- PHOTOS -->
+
+    <div class="photos">
+
+        <div class="photo-card">
+
+            <img
+                src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260912_223101_Instagram.jpg"
+                class="photo"
+                alt="รูปของเรา 1"
+            >
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260813_091045_Instagram.jpg"
+                class="photo"
+                alt="รูปของเรา 2"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+
+    <div class="message">
+
+        <strong>
+            สุขสันต์ครบรอบ 1 เดือนนะมินนี่ ❤️
+        </strong>
+
+        <br><br>
+
+        ขอบคุณที่เข้ามาเป็นความสุข
+        ของต้นน้ำในทุก ๆ วันนะ 💕
+
+        <br>
+
+        ถึงเราจะมีงอนกันบ้าง
+        ทะเลาะกันบ้าง
+
+        <br>
+
+        แต่ต้นน้ำก็ยังรักมินนี่
+        เหมือนเดิมเสมอ ❤️
+
+        <br>
+
+        ขอบคุณสำหรับทุกช่วงเวลา
+        ที่เราได้อยู่ด้วยกันนะ 🫶
+
+        <br>
+
+        ขอให้เราได้สร้างความทรงจำดี ๆ
+        ด้วยกันไปอีกนาน ๆ เลยนะ
+
+        <br><br>
+
+        <strong>
+            รักมินนี่นะ ❤️
+        </strong>
+
+    </div>
+
+
+    <button
+        class="open-button"
+        onclick="showQuestion()"
+    >
+        💌 มีคำถามอยากถาม
+    </button>
+
+
+    <div class="footer">
+        Made with ❤️ by ต้นน้ำ
+    </div>
+
 </div>
 
-<div class="message">
-<strong>สุขสันต์ครบรอบ 1 เดือนนะมินนี่ ❤️</strong><br><br>
-ขอบคุณที่เข้ามาเป็นความสุขของต้นน้ำในทุก ๆ วันนะ 💕<br>
-ถึงเราจะมีงอนกันบ้าง <br>
-แต่ต้นน้ำก็ยังรักมินนี่เหมือนเดิมเสมอ ❤️<br>
-ขอบคุณสำหรับทุกช่วงเวลาที่เราได้อยู่ด้วยกันนะ 🫶<br>
-ขอให้เราได้สร้างความทรงจำดี ๆ ด้วยกันไปอีกนาน ๆ เลยนะ<br><br>
-<strong>รักมินนี่นะ ❤️</strong>
-</div>
-
-<button class="open-button" onclick="showQuestion()">💌 มีคำถามอยากถาม</button>
-<div class="footer">Made with ❤️ by ต้นน้ำ</div>
-</div>
 </section>
 
-<section id="questionPage" class="page hidden">
+
+<!-- =========================
+     QUESTION PAGE
+========================= -->
+
+<section
+    id="questionPage"
+    class="page hidden"
+>
+
 <div class="card question-card">
-<div class="question-heart">💗</div>
-<div class="question-title" id="questionTitle">มินนี่รักต้นน้ำไหม? 💕</div>
-<div class="choices">
-<button id="yesButton" class="choice yes" onclick="yesLove()">❤️ รัก</button>
-<button id="noButton" class="choice no" onclick="noLove()">💔 ไม่รัก</button>
+
+    <div class="question-heart">
+        💗
+    </div>
+
+    <div
+        class="question-title"
+        id="questionTitle"
+    >
+        มินนี่รักต้นน้ำไหม? 💕
+    </div>
+
+    <div class="choices">
+
+        <button
+            id="yesButton"
+            class="choice yes"
+            onclick="yesLove()"
+        >
+            ❤️ รัก
+        </button>
+
+        <button
+            id="noButton"
+            class="choice no"
+            onclick="noLove()"
+        >
+            💔 ไม่รัก
+        </button>
+
+    </div>
+
+    <div class="hint">
+        ลองเลือกคำตอบดูนะ 🥺💕
+    </div>
+
+    <button
+        class="back-button"
+        onclick="showHome()"
+    >
+        ← กลับไปหน้าหลัก
+    </button>
+
 </div>
-<div class="hint">ลองเลือกคำตอบดูนะ 🥺💕</div>
-<button class="back-button" onclick="showHome()">← กลับไปหน้าหลัก</button>
-</div>
+
 </section>
 
-<section id="successPage" class="page hidden">
+
+<!-- =========================
+     SUCCESS PAGE
+========================= -->
+
+<section
+    id="successPage"
+    class="page hidden"
+>
+
 <div class="card success-card">
-<div class="success-heart">💖</div>
-<div class="success-title">เย้! มินนี่รักต้นน้ำ 💕</div>
-<div class="success-message">
-❤️ 💕 ❤️<br><br>
-เค้าก็รักมินนี่ที่สุดเลย<br>
-Ti amo con tutto il cuore ❤️<br><br>
-🫶 อยู่ด้วยกันไปนาน ๆ นะ<br>
-Happy 1 Month Anniversary 💗
+
+    <div class="success-heart">
+        💖
+    </div>
+
+    <div class="success-title">
+        เย้! มินนี่รักต้นน้ำ 💕
+    </div>
+
+    <div class="success-message">
+
+        ❤️ 💕 ❤️
+
+        <br><br>
+
+        เค้าก็รักมินนี่ที่สุดเลย
+
+        <br>
+
+        Ti amo con tutto il cuore ❤️
+
+        <br><br>
+
+        🫶 อยู่ด้วยกันไปนาน ๆ นะ
+
+        <br>
+
+        Happy 1 Month Anniversary 💗
+
+    </div>
+
+    <button
+        class="back-button"
+        onclick="showHome()"
+    >
+        ← กลับไปหน้าหลัก
+    </button>
+
 </div>
-<button class="back-button" onclick="showHome()">← กลับไปหน้าหลัก</button>
-</div>
+
 </section>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio
+    id="bgMusic"
+    loop
+    preload="auto"
+>
+    <source
+        src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/PUN%20-%20%E0%B8%A3%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B8%94%E0%B8%A3%20(Proof.).mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
+
+<div
+    class="music-label"
+    id="musicLabel"
+>
+    🎵 เพลงของเรา
+</div>
+
+
+<button
+    id="musicButton"
+    onclick="toggleMusic()"
+    aria-label="เปิดหรือปิดเพลง"
+>
+    🔇
+</button>
+
 
 <script>
-let yesScale=1;
-let noScale=1;
-const noMessages=[
-"แน่ใจนะ? 🥺","ลองคิดใหม่อีกทีนะ 💗","ต้นน้ำเสียใจแล้วนะ 😭","กดรักเถอะนะ ❤️",
-"ปุ่มรักใหญ่ขึ้นแล้วนะ 😂","มินนี่ใจร้ายจัง 💔","รักต้นน้ำเถอะนะ 🥹❤️",
-"เหลือปุ่มไม่รักนิดเดียวแล้ว 😂","รักต้นน้ำเถอะน้าาา ❤️"
+
+/* =========================
+   VARIABLES
+========================= */
+
+let yesScale = 1;
+let noScale = 1;
+
+let musicStarted = false;
+
+
+/* =========================
+   NO MESSAGES
+========================= */
+
+const noMessages = [
+
+    "แน่ใจนะ? 🥺",
+
+    "ลองคิดใหม่อีกทีนะ 💗",
+
+    "ต้นน้ำเสียใจแล้วนะ 😭",
+
+    "กดรักเถอะนะ ❤️",
+
+    "ปุ่มรักใหญ่ขึ้นแล้วนะ 😂",
+
+    "มินนี่ใจร้ายจัง 💔",
+
+    "รักต้นน้ำเถอะนะ 🥹❤️",
+
+    "เหลือปุ่มไม่รักนิดเดียวแล้ว 😂",
+
+    "รักต้นน้ำเถอะน้าาา ❤️"
+
 ];
 
-function hideAllPages(){
- document.getElementById("homePage").classList.add("hidden");
- document.getElementById("questionPage").classList.add("hidden");
- document.getElementById("successPage").classList.add("hidden");
+
+/* =========================
+   MUSIC
+========================= */
+
+const bgMusic =
+    document.getElementById(
+        "bgMusic"
+    );
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+
+function startMusic(){
+
+    bgMusic.volume = 0.45;
+
+    bgMusic.play()
+        .then(function(){
+
+            musicStarted = true;
+
+            musicButton.classList.add(
+                "playing"
+            );
+
+            musicButton.innerHTML =
+                "🎵";
+
+        })
+        .catch(function(){
+
+            musicButton.innerHTML =
+                "▶️";
+
+        });
+
 }
+
+
+function toggleMusic(){
+
+    if(
+        bgMusic.paused
+    ){
+
+        startMusic();
+
+    }else{
+
+        bgMusic.pause();
+
+        musicButton.classList.remove(
+            "playing"
+        );
+
+        musicButton.innerHTML =
+            "🔇";
+
+    }
+
+}
+
+
+/* =========================
+   OPEN ENVELOPE
+========================= */
+
+function openEnvelope(){
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+    if(
+        envelope.classList.contains(
+            "open"
+        )
+    ){
+        return;
+    }
+
+
+    envelope.classList.add(
+        "open"
+    );
+
+
+    /* START MUSIC */
+
+    startMusic();
+
+
+    /* HEART EFFECT */
+
+    for(
+        let i = 0;
+        i < 15;
+        i++
+    ){
+
+        setTimeout(
+            createHeart,
+            i * 70
+        );
+
+    }
+
+
+    /* CHANGE PAGE */
+
+    setTimeout(
+        function(){
+
+            document
+                .getElementById(
+                    "envelopePage"
+                )
+                .classList.add(
+                    "hidden"
+                );
+
+
+            document
+                .getElementById(
+                    "homePage"
+                )
+                .classList.remove(
+                    "hidden"
+                );
+
+
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+
+        },
+        1200
+    );
+
+}
+
+
+/* =========================
+   HIDE PAGES
+========================= */
+
+function hidePages(){
+
+    document
+        .getElementById(
+            "homePage"
+        )
+        .classList.add(
+            "hidden"
+        );
+
+    document
+        .getElementById(
+            "questionPage"
+        )
+        .classList.add(
+            "hidden"
+        );
+
+    document
+        .getElementById(
+            "successPage"
+        )
+        .classList.add(
+            "hidden"
+        );
+
+}
+
+
+/* =========================
+   HOME
+========================= */
+
 function showHome(){
- hideAllPages();
- document.getElementById("homePage").classList.remove("hidden");
- window.scrollTo({top:0,behavior:"smooth"});
+
+    hidePages();
+
+    document
+        .getElementById(
+            "homePage"
+        )
+        .classList.remove(
+            "hidden"
+        );
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
 }
+
+
+/* =========================
+   QUESTION
+========================= */
+
 function showQuestion(){
- hideAllPages();
- document.getElementById("questionPage").classList.remove("hidden");
- resetButtons();
- window.scrollTo({top:0,behavior:"smooth"});
+
+    hidePages();
+
+    document
+        .getElementById(
+            "questionPage"
+        )
+        .classList.remove(
+            "hidden"
+        );
+
+
+    resetButtons();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
 }
+
+
+/* =========================
+   RESET BUTTONS
+========================= */
+
 function resetButtons(){
- yesScale=1; noScale=1;
- const yes=document.getElementById("yesButton");
- const no=document.getElementById("noButton");
- const question=document.getElementById("questionTitle");
- if(yes){yes.style.transform="scale(1)";yes.style.opacity="1";yes.innerHTML="❤️ รัก";}
- if(no){no.style.transform="scale(1)";no.style.opacity="1";no.innerHTML="💔 ไม่รัก";}
- if(question) question.innerHTML="มินนี่รักต้นน้ำไหม? 💕";
+
+    yesScale = 1;
+    noScale = 1;
+
+
+    const yes =
+        document.getElementById(
+            "yesButton"
+        );
+
+    const no =
+        document.getElementById(
+            "noButton"
+        );
+
+    const question =
+        document.getElementById(
+            "questionTitle"
+        );
+
+
+    yes.style.transform =
+        "scale(1)";
+
+    yes.style.opacity =
+        "1";
+
+
+    no.style.transform =
+        "scale(1)";
+
+    no.style.opacity =
+        "1";
+
+
+    question.innerHTML =
+        "มินนี่รักต้นน้ำไหม? 💕";
+
 }
+
+
+/* =========================
+   NO LOVE
+========================= */
+
 function noLove(){
- const yes=document.getElementById("yesButton");
- const no=document.getElementById("noButton");
- const question=document.getElementById("questionTitle");
- if(!yes||!no||!question)return;
- yesScale=Math.min(3.5,yesScale+0.20);
- yes.style.transform=`scale(${yesScale})`;
- noScale=Math.max(0.35,noScale-0.10);
- no.style.transform=`scale(${noScale})`;
- no.style.opacity=Math.max(0.35,noScale);
- const index=Math.min(Math.floor((yesScale-1)/0.20),noMessages.length-1);
- question.innerHTML=noMessages[index];
- for(let i=0;i<5;i++)setTimeout(createHeart,i*70);
+
+    const yes =
+        document.getElementById(
+            "yesButton"
+        );
+
+    const no =
+        document.getElementById(
+            "noButton"
+        );
+
+    const question =
+        document.getElementById(
+            "questionTitle"
+        );
+
+
+    yesScale += .20;
+
+
+    if(
+        yesScale > 3.5
+    ){
+
+        yesScale = 3.5;
+
+    }
+
+
+    yes.style.transform =
+        `scale(${yesScale})`;
+
+
+    noScale -= .10;
+
+
+    if(
+        noScale < .35
+    ){
+
+        noScale = .35;
+
+    }
+
+
+    no.style.transform =
+        `scale(${noScale})`;
+
+
+    no.style.opacity =
+        Math.max(
+            .35,
+            noScale
+        );
+
+
+    const index =
+        Math.min(
+            Math.floor(
+                (yesScale - 1) / .20
+            ),
+            noMessages.length - 1
+        );
+
+
+    question.innerHTML =
+        noMessages[index];
+
+
+    for(
+        let i = 0;
+        i < 5;
+        i++
+    ){
+
+        setTimeout(
+            createHeart,
+            i * 70
+        );
+
+    }
+
 }
+
+
+/* =========================
+   YES LOVE
+========================= */
+
 function yesLove(){
- hideAllPages();
- document.getElementById("successPage").classList.remove("hidden");
- window.scrollTo({top:0,behavior:"smooth"});
- for(let i=0;i<80;i++)setTimeout(createHeart,i*40);
+
+    hidePages();
+
+
+    document
+        .getElementById(
+            "successPage"
+        )
+        .classList.remove(
+            "hidden"
+        );
+
+
+    startMusic();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+
+    for(
+        let i = 0;
+        i < 100;
+        i++
+    ){
+
+        setTimeout(
+            createHeart,
+            i * 35
+        );
+
+    }
+
 }
+
+
+/* =========================
+   FLOATING HEART
+========================= */
+
 function createHeart(){
- const heart=document.createElement("div");
- heart.className="floating-heart";
- const hearts=["❤️","💕","💗","💖","💘","💞","💓","💝"];
- heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
- heart.style.left=Math.random()*100+"vw";
- heart.style.fontSize=(18+Math.random()*35)+"px";
- heart.style.animationDuration=(3+Math.random()*4)+"s";
- document.body.appendChild(heart);
- setTimeout(()=>heart.remove(),7000);
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+
+    heart.className =
+        "floating-heart";
+
+
+    const hearts = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "💞",
+        "💓",
+        "💝"
+
+    ];
+
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random()
+                * hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random()
+        * 100
+        + "vw";
+
+
+    heart.style.fontSize =
+        (
+            18 +
+            Math.random() * 35
+        )
+        + "px";
+
+
+    heart.style.animationDuration =
+        (
+            3 +
+            Math.random() * 4
+        )
+        + "s";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(
+        () => heart.remove(),
+        7000
+    );
+
 }
-setInterval(createHeart,1200);
+
+
+/* =========================
+   AUTO HEARTS
+========================= */
+
+setInterval(
+    createHeart,
+    1200
+);
+
 </script>
+
 </body>
 </html>
