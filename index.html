@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ถึงมินนี่ 💗</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -20,7 +22,7 @@ html,body{
 
 body{
     font-family:"Segoe UI",Tahoma,sans-serif;
-    color:#fff;
+    color:white;
     background:#18060d;
 }
 
@@ -32,21 +34,43 @@ body::before{
     content:"";
     position:fixed;
     inset:0;
+
     background:
-        radial-gradient(circle at 20% 20%,rgba(255,90,130,.28),transparent 30%),
-        radial-gradient(circle at 80% 80%,rgba(255,0,80,.22),transparent 35%),
-        linear-gradient(135deg,#270812,#6d102b,#260711);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,90,130,.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255,0,80,.22),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #270812,
+            #6d102b,
+            #260711
+        );
+
     z-index:-3;
 }
 
 .glow{
     position:fixed;
+
     width:350px;
     height:350px;
+
     border-radius:50%;
+
     background:rgba(255,60,110,.12);
+
     filter:blur(80px);
-    animation:glowMove 8s infinite alternate ease-in-out;
+
+    animation:
+        glowMove 8s infinite alternate ease-in-out;
+
     z-index:-2;
 }
 
@@ -58,13 +82,22 @@ body::before{
 .glow.two{
     right:-120px;
     bottom:-100px;
+
     animation-delay:2s;
 }
 
 @keyframes glowMove{
-    from{transform:translate(0,0) scale(1)}
-    to{transform:translate(80px,50px) scale(1.3)}
+
+    from{
+        transform:translate(0,0) scale(1);
+    }
+
+    to{
+        transform:translate(80px,50px) scale(1.3);
+    }
+
 }
+
 
 /* =========================
    PAGE
@@ -72,6 +105,7 @@ body::before{
 
 .page{
     position:fixed;
+
     inset:0;
 
     display:flex;
@@ -81,11 +115,11 @@ body::before{
     opacity:0;
     visibility:hidden;
 
+    transform:scale(1.03);
+
     transition:
         opacity .8s ease,
         transform .8s ease;
-
-    transform:scale(1.03);
 
     overflow:auto;
 }
@@ -93,27 +127,37 @@ body::before{
 .page.active{
     opacity:1;
     visibility:visible;
+
     transform:scale(1);
 }
 
+
 /* =========================
-   FLOATING HEARTS
+   HEARTS
 ========================= */
 
 .heart{
     position:fixed;
+
     bottom:-30px;
 
     pointer-events:none;
-    z-index:50;
 
-    animation:floatHeart linear forwards;
+    z-index:100;
+
+    animation:
+        floatHeart linear forwards;
 }
 
 @keyframes floatHeart{
+
     0%{
         opacity:0;
-        transform:translateY(0) scale(.5) rotate(0);
+
+        transform:
+            translateY(0)
+            scale(.5)
+            rotate(0deg);
     }
 
     15%{
@@ -122,33 +166,44 @@ body::before{
 
     100%{
         opacity:0;
+
         transform:
             translateY(-110vh)
             translateX(70px)
             scale(1.5)
             rotate(35deg);
     }
+
 }
+
 
 /* =========================
    GLASS
 ========================= */
 
 .glass{
-    background:rgba(255,255,255,.075);
 
-    border:1px solid rgba(255,255,255,.18);
+    background:
+        rgba(255,255,255,.075);
 
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
 
     box-shadow:
         0 30px 80px rgba(0,0,0,.35),
         inset 0 1px rgba(255,255,255,.1);
+
 }
 
+
 /* =========================
-   ENVELOPE
+   ENVELOPE PAGE
 ========================= */
 
 #envelopePage{
@@ -156,47 +211,74 @@ body::before{
 }
 
 .envelope-wrap{
+
     width:100%;
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
 }
 
 .envelope-title{
+
     font-size:30px;
+
     font-weight:800;
-    margin-bottom:15px;
+
+    margin-bottom:10px;
 
     text-shadow:
-        0 0 20px rgba(255,100,150,.8);
+        0 0 20px
+        rgba(255,100,150,.8);
 }
 
 .envelope-subtitle{
+
     font-size:14px;
+
     opacity:.75;
+
     margin-bottom:12px;
 }
 
+
+/* =========================
+   ENVELOPE STAGE
+========================= */
+
 .envelope-stage{
+
     position:relative;
+
     width:420px;
+
     height:470px;
+
 }
 
-/* LETTER */
+
+/* =========================
+   LETTER
+========================= */
 
 .letter{
+
     position:absolute;
 
     width:345px;
+
     height:220px;
 
     left:37px;
+
     top:30px;
 
     padding:28px;
 
     color:#8e2440;
+
     background:
         linear-gradient(
             135deg,
@@ -209,33 +291,46 @@ body::before{
     text-align:left;
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,.35);
+        0 20px 50px
+        rgba(0,0,0,.35);
 
     z-index:4;
 
     transition:
-        transform 1.2s cubic-bezier(.2,.8,.2,1);
+        transform
+        1.2s
+        cubic-bezier(.2,.8,.2,1);
 }
 
 .letter h3{
+
     font-size:22px;
+
     margin-bottom:12px;
 }
 
 .letter p{
+
     font-size:15px;
+
     line-height:1.8;
 }
 
-/* ENVELOPE */
+
+/* =========================
+   ENVELOPE
+========================= */
 
 .envelope{
+
     position:absolute;
 
     width:420px;
+
     height:285px;
 
     left:0;
+
     top:30px;
 
     cursor:pointer;
@@ -243,17 +338,26 @@ body::before{
     z-index:5;
 
     filter:
-        drop-shadow(0 20px 25px rgba(0,0,0,.4));
+        drop-shadow(
+            0 20px 25px
+            rgba(0,0,0,.4)
+        );
 
-    transition:transform .3s;
+    transition:
+        transform .3s;
 }
 
 .envelope:hover{
-    transform:translateY(-6px);
+
+    transform:
+        translateY(-6px);
 }
 
+
 .envelope-body{
+
     position:absolute;
+
     inset:0;
 
     background:
@@ -269,73 +373,115 @@ body::before{
 }
 
 .envelope-body::before{
+
     content:"";
 
     position:absolute;
+
     left:0;
+
     bottom:0;
 
-    border-left:210px solid transparent;
-    border-right:210px solid transparent;
-    border-bottom:155px solid rgba(255,255,255,.12);
+    border-left:
+        210px solid transparent;
+
+    border-right:
+        210px solid transparent;
+
+    border-bottom:
+        155px solid
+        rgba(255,255,255,.12);
 
     z-index:6;
 }
 
 .envelope-body::after{
+
     content:"";
 
     position:absolute;
+
     left:0;
+
     bottom:0;
 
-    border-left:210px solid transparent;
-    border-right:210px solid transparent;
-    border-bottom:155px solid rgba(165,0,40,.28);
+    border-left:
+        210px solid transparent;
 
-    transform:scaleY(.75);
+    border-right:
+        210px solid transparent;
+
+    border-bottom:
+        155px solid
+        rgba(165,0,40,.28);
+
+    transform:
+        scaleY(.75);
 
     z-index:7;
 }
 
-/* FLAP */
+
+/* =========================
+   FLAP
+========================= */
 
 .flap{
+
     position:absolute;
 
     top:0;
+
     left:0;
 
     width:0;
+
     height:0;
 
-    border-left:210px solid transparent;
-    border-right:210px solid transparent;
-    border-top:150px solid #ff8197;
+    border-left:
+        210px solid transparent;
 
-    transform-origin:top center;
+    border-right:
+        210px solid transparent;
+
+    border-top:
+        150px solid #ff8197;
+
+    transform-origin:
+        top center;
 
     z-index:9;
 
     transition:
-        transform 1s cubic-bezier(.2,.7,.2,1);
+        transform
+        1s
+        cubic-bezier(.2,.7,.2,1);
 }
 
-/* SEAL */
+
+/* =========================
+   SEAL
+========================= */
 
 .heart-seal{
+
     position:absolute;
 
     left:50%;
+
     top:52%;
 
     width:65px;
+
     height:65px;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     border-radius:50%;
@@ -345,60 +491,101 @@ body::before{
     font-size:32px;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.25);
+        0 10px 30px
+        rgba(0,0,0,.25);
 
     z-index:10;
 
     transition:.5s;
 }
 
-/* OPEN */
 
-.envelope-stage.open .flap{
-    transform:rotateX(180deg);
+/* =========================
+   OPEN ENVELOPE
+========================= */
+
+.envelope-stage.open
+.flap{
+
+    transform:
+        rotateX(180deg);
 }
 
-.envelope-stage.open .heart-seal{
+.envelope-stage.open
+.heart-seal{
+
     opacity:0;
+
     transform:
         translate(-50%,-50%)
         scale(0);
 }
 
-.envelope-stage.open .letter{
-    transform:translateY(-145px);
+.envelope-stage.open
+.letter{
+
+    transform:
+        translateY(-145px);
+
     z-index:20;
 }
 
-.envelope-stage.open .envelope{
+.envelope-stage.open
+.envelope{
+
     animation:
-        envelopeDown 1.1s ease .8s forwards;
+        envelopeDown
+        1.1s
+        ease
+        .8s
+        forwards;
 }
 
 @keyframes envelopeDown{
+
     to{
-        transform:translateY(360px);
+
+        transform:
+            translateY(360px);
+
         opacity:0;
     }
+
 }
 
 .envelope-hint{
+
     font-size:14px;
+
     opacity:.75;
-    animation:hintPulse 1.5s infinite alternate;
+
+    animation:
+        hintPulse
+        1.5s
+        infinite alternate;
 }
 
 @keyframes hintPulse{
-    from{opacity:.45}
-    to{opacity:1}
+
+    from{
+        opacity:.45;
+    }
+
+    to{
+        opacity:1;
+    }
+
 }
+
 
 /* =========================
    HOME
 ========================= */
 
 .home-container{
+
     width:min(950px,94vw);
+
     max-height:94vh;
 
     padding:35px;
@@ -415,12 +602,17 @@ body::before{
 }
 
 .home-container::-webkit-scrollbar-thumb{
-    background:rgba(255,255,255,.3);
+
+    background:
+        rgba(255,255,255,.3);
+
     border-radius:10px;
 }
 
 .home-title{
+
     font-size:48px;
+
     font-weight:900;
 
     background:
@@ -431,37 +623,53 @@ body::before{
             #fff
         );
 
-    -webkit-background-clip:text;
     background-clip:text;
+    -webkit-background-clip:text;
+
     color:transparent;
 
     margin-bottom:5px;
 }
 
 .home-date{
+
     opacity:.7;
+
     font-size:14px;
+
     margin-bottom:28px;
 }
 
+
+/* =========================
+   PHOTOS
+========================= */
+
 .photos{
+
     display:flex;
+
     justify-content:center;
+
     gap:20px;
+
     flex-wrap:wrap;
 
     margin-bottom:28px;
 }
 
 .photo-card{
+
     position:relative;
 
     width:390px;
+
     max-width:100%;
 
     padding:8px;
 
-    background:rgba(255,255,255,.13);
+    background:
+        rgba(255,255,255,.13);
 
     border-radius:20px;
 
@@ -471,22 +679,27 @@ body::before{
 }
 
 .photo-card:hover{
+
     transform:
         translateY(-8px)
         rotate(-1deg);
 
     box-shadow:
-        0 20px 50px rgba(255,50,100,.25);
+        0 20px 50px
+        rgba(255,50,100,.25);
 }
 
 .photo-card:nth-child(2):hover{
+
     transform:
         translateY(-8px)
         rotate(1deg);
 }
 
 .photo-card img{
+
     width:100%;
+
     height:280px;
 
     object-fit:cover;
@@ -496,33 +709,53 @@ body::before{
     border-radius:15px;
 }
 
+
+/* =========================
+   MESSAGE
+========================= */
+
 .message{
+
     max-width:780px;
+
     margin:auto;
 
     padding:27px;
 
     border-radius:22px;
 
-    background:rgba(255,255,255,.065);
+    background:
+        rgba(255,255,255,.065);
 
-    border:1px solid rgba(255,255,255,.12);
+    border:
+        1px solid
+        rgba(255,255,255,.12);
 
     font-size:17px;
+
     line-height:2;
 
     margin-bottom:25px;
 }
 
 .highlight{
+
     font-size:20px;
+
     font-weight:800;
 }
 
+
+/* =========================
+   MAIN BUTTON
+========================= */
+
 .main-btn{
+
     border:0;
 
-    padding:16px 35px;
+    padding:
+        16px 35px;
 
     border-radius:999px;
 
@@ -536,65 +769,116 @@ body::before{
     color:#c51d48;
 
     font-size:17px;
+
     font-weight:800;
 
     cursor:pointer;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.25);
+        0 10px 30px
+        rgba(0,0,0,.25);
 
     transition:.3s;
 }
 
 .main-btn:hover{
-    transform:translateY(-3px) scale(1.04);
+
+    transform:
+        translateY(-3px)
+        scale(1.04);
 }
+
 
 /* =========================
    QUESTION
 ========================= */
 
 .question-container{
+
     text-align:center;
 
     width:min(800px,92vw);
 
-    padding:45px 25px;
+    padding:
+        45px 25px;
 }
 
 .question-small{
+
     font-size:14px;
+
     opacity:.65;
+
     margin-bottom:15px;
 }
 
 .question-title{
+
     font-size:43px;
+
     font-weight:900;
 
-    margin-bottom:45px;
+    margin-bottom:12px;
 
     text-shadow:
-        0 0 25px rgba(255,80,130,.5);
+        0 0 25px
+        rgba(255,80,130,.5);
 }
 
+
+/* ข้อความจากปุ่มไม่รัก
+   จะมาแสดงตรงนี้ */
+
+.question-message{
+
+    min-height:32px;
+
+    margin-bottom:30px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#ffdce5;
+
+    text-shadow:
+        0 0 15px
+        rgba(255,100,150,.5);
+
+    transition:
+        opacity .3s,
+        transform .3s;
+}
+
+
+/* =========================
+   QUESTION BUTTONS
+========================= */
+
 .question-buttons{
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     gap:25px;
 
     min-height:110px;
 }
 
 .love-btn{
+
     border:0;
 
-    padding:16px 34px;
+    padding:
+        16px 34px;
 
     border-radius:999px;
 
     font-size:19px;
+
     font-weight:800;
 
     cursor:pointer;
@@ -606,48 +890,64 @@ body::before{
 }
 
 .yes-btn{
+
     background:#fff;
+
     color:#d21e4c;
 
     box-shadow:
-        0 10px 35px rgba(255,255,255,.18);
+        0 10px 35px
+        rgba(255,255,255,.18);
 }
 
 .yes-btn:hover{
+
     box-shadow:
-        0 10px 40px rgba(255,100,140,.4);
+        0 10px 40px
+        rgba(255,100,140,.4);
 }
 
 .no-btn{
+
     color:#fff;
 
-    background:rgba(255,255,255,.1);
+    background:
+        rgba(255,255,255,.1);
 
-    border:1px solid rgba(255,255,255,.3);
+    border:
+        1px solid
+        rgba(255,255,255,.3);
 }
+
 
 /* =========================
    SUCCESS
 ========================= */
 
 .success-container{
+
     text-align:center;
 
     width:min(720px,92vw);
 
-    padding:50px 30px;
+    padding:
+        50px 30px;
 
     border-radius:35px;
 }
 
 .success-heart{
+
     font-size:90px;
 
     animation:
-        heartbeat 1s infinite alternate;
+        heartbeat
+        1s
+        infinite alternate;
 }
 
 @keyframes heartbeat{
+
     from{
         transform:scale(1);
     }
@@ -655,32 +955,42 @@ body::before{
     to{
         transform:scale(1.15);
     }
+
 }
 
 .success-title{
+
     font-size:55px;
+
     margin:15px 0;
 }
 
 .success-text{
+
     font-size:18px;
+
     line-height:2;
 }
+
 
 /* =========================
    MUSIC
 ========================= */
 
 .music-btn{
+
     position:fixed;
 
     right:20px;
+
     bottom:20px;
 
     width:55px;
+
     height:55px;
 
     border:0;
+
     border-radius:50%;
 
     background:#fff;
@@ -694,14 +1004,18 @@ body::before{
     z-index:200;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.3);
+        0 10px 30px
+        rgba(0,0,0,.3);
 
     transition:.3s;
 }
 
 .music-btn:hover{
-    transform:scale(1.1);
+
+    transform:
+        scale(1.1);
 }
+
 
 /* =========================
    MOBILE
@@ -710,111 +1024,159 @@ body::before{
 @media(max-width:600px){
 
     .envelope-title{
+
         font-size:23px;
     }
 
     .envelope-stage{
+
         width:330px;
+
         height:390px;
     }
 
     .envelope{
+
         width:330px;
+
         height:225px;
     }
 
     .envelope-body::before,
     .envelope-body::after{
+
         border-left-width:165px;
+
         border-right-width:165px;
     }
 
     .flap{
+
         border-left-width:165px;
+
         border-right-width:165px;
+
         border-top-width:115px;
     }
 
     .letter{
+
         width:270px;
+
         height:175px;
+
         left:30px;
+
         padding:20px;
     }
 
     .letter h3{
+
         font-size:18px;
     }
 
     .letter p{
+
         font-size:13px;
+
         line-height:1.6;
     }
 
-    .envelope-stage.open .letter{
-        transform:translateY(-115px);
+    .envelope-stage.open
+    .letter{
+
+        transform:
+            translateY(-115px);
     }
 
     @keyframes envelopeDown{
+
         to{
-            transform:translateY(290px);
+
+            transform:
+                translateY(290px);
+
             opacity:0;
         }
+
     }
 
     .home-container{
-        padding:22px 15px;
+
+        padding:
+            22px 15px;
     }
 
     .home-title{
+
         font-size:34px;
     }
 
-    .home-date{
-        margin-bottom:20px;
-    }
-
     .photo-card img{
+
         height:230px;
     }
 
     .message{
-        padding:20px 16px;
+
+        padding:
+            20px 16px;
+
         font-size:15px;
+
         line-height:1.8;
     }
 
     .highlight{
+
         font-size:18px;
     }
 
     .question-title{
+
         font-size:30px;
     }
 
+    .question-message{
+
+        font-size:15px;
+
+        margin-bottom:25px;
+    }
+
     .question-buttons{
+
         gap:15px;
     }
 
     .love-btn{
-        padding:14px 23px;
+
+        padding:
+            14px 23px;
+
         font-size:16px;
     }
 
     .success-title{
+
         font-size:42px;
     }
 
     .success-heart{
+
         font-size:70px;
     }
 
     .success-text{
+
         font-size:16px;
     }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
@@ -823,10 +1185,12 @@ body::before{
 
 
 <!-- =========================
-     ENVELOPE
+     ENVELOPE PAGE
 ========================= -->
 
-<section class="page active" id="envelopePage">
+<section
+    class="page active"
+    id="envelopePage">
 
     <div class="envelope-wrap">
 
@@ -838,16 +1202,23 @@ body::before{
             เปิดดูสิ... ต้นน้ำมีอะไรอยากบอก 💗
         </div>
 
-        <div class="envelope-stage" id="envelopeStage">
+
+        <div
+            class="envelope-stage"
+            id="envelopeStage">
+
 
             <!-- LETTER -->
+
             <div class="letter">
 
-                <h3>ถึง มินนี่ ❤️</h3>
+                <h3>
+                    ถึง มินนี่ ❤️
+                </h3>
 
                 <p>
-                    มีเรื่องเล็ก ๆ ที่ต้นน้ำ
-                    อยากบอกมินนี่...
+                    มีเรื่องเล็ก ๆ
+                    ที่ต้นน้ำอยากบอกมินนี่...
                 </p>
 
                 <p style="margin-top:8px">
@@ -860,8 +1231,12 @@ body::before{
 
             </div>
 
+
             <!-- ENVELOPE -->
-            <div class="envelope" id="envelope">
+
+            <div
+                class="envelope"
+                id="envelope">
 
                 <div class="envelope-body"></div>
 
@@ -875,6 +1250,7 @@ body::before{
 
         </div>
 
+
         <div class="envelope-hint">
             แตะที่ซองเพื่อเปิดจดหมาย ✨
         </div>
@@ -884,13 +1260,18 @@ body::before{
 </section>
 
 
+
 <!-- =========================
-     HOME
+     HOME PAGE
 ========================= -->
 
-<section class="page" id="homePage">
+<section
+    class="page"
+    id="homePage">
 
-    <div class="home-container glass">
+    <div
+        class="home-container glass">
+
 
         <div class="home-title">
             Happy 1 Month 💗
@@ -900,21 +1281,34 @@ body::before{
             หนึ่งเดือนของเรา 🥰
         </div>
 
+
+        <!-- PHOTOS -->
+
         <div class="photos">
 
+
             <div class="photo-card">
+
                 <img
                     src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260912_223101_Instagram.jpg"
                     alt="รูปของเรา">
+
             </div>
 
+
             <div class="photo-card">
+
                 <img
                     src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/Screenshot_20260813_091045_Instagram.jpg"
                     alt="รูปของเรา">
+
             </div>
 
+
         </div>
+
+
+        <!-- MESSAGE -->
 
         <div class="message">
 
@@ -937,13 +1331,15 @@ body::before{
             <br>
 
             ขอบคุณสำหรับทุก ๆ รอยยิ้ม
-            ทุกคำพูด และทุกช่วงเวลาที่เราได้มีด้วยกัน 🥺
+            ทุกคำพูด
+            และทุกช่วงเวลาที่เราได้มีด้วยกัน 🥺
 
             <br>
 
             ต้นน้ำไม่รู้ว่าอนาคตจะเป็นยังไง
             แต่ต้นน้ำอยากให้มีมินนี่
-            อยู่ในเรื่องราวต่อ ๆ ไปของต้นน้ำด้วย 💕
+            อยู่ในเรื่องราวต่อ ๆ ไป
+            ของต้นน้ำด้วย 💕
 
             <br><br>
 
@@ -957,8 +1353,13 @@ body::before{
 
         </div>
 
-        <button class="main-btn" onclick="showQuestion()">
+
+        <button
+            class="main-btn"
+            onclick="showQuestion()">
+
             มีคำถามอยากถามมินนี่ 💕
+
         </button>
 
     </div>
@@ -966,23 +1367,49 @@ body::before{
 </section>
 
 
+
 <!-- =========================
-     QUESTION
+     QUESTION PAGE
 ========================= -->
 
-<section class="page" id="questionPage">
+<section
+    class="page"
+    id="questionPage">
 
     <div class="question-container">
 
+
         <div class="question-small">
-            ก่อนจบเว็บนี้... ขอถามอะไรหน่อยนะ 🥺
+            ก่อนจบเว็บนี้...
+            ขอถามอะไรหน่อยนะ 🥺
         </div>
 
-        <div class="question-title">
+
+        <div
+            class="question-title"
+            id="questionTitle">
+
             มินนี่รักต้นน้ำไหม? ❤️
+
         </div>
+
+
+        <!--
+            ข้อความจะเปลี่ยนตรงนี้
+            ไม่ได้เปลี่ยนบนปุ่ม
+        -->
+
+        <div
+            class="question-message"
+            id="questionMessage">
+
+            เลือกคำตอบจากใจได้เลยนะ 💕
+
+        </div>
+
 
         <div class="question-buttons">
+
 
             <button
                 class="love-btn yes-btn"
@@ -993,6 +1420,7 @@ body::before{
 
             </button>
 
+
             <button
                 class="love-btn no-btn"
                 id="noButton"
@@ -1002,6 +1430,7 @@ body::before{
 
             </button>
 
+
         </div>
 
     </div>
@@ -1009,25 +1438,33 @@ body::before{
 </section>
 
 
+
 <!-- =========================
-     SUCCESS
+     SUCCESS PAGE
 ========================= -->
 
-<section class="page" id="successPage">
+<section
+    class="page"
+    id="successPage">
 
-    <div class="success-container glass">
+    <div
+        class="success-container glass">
+
 
         <div class="success-heart">
             ❤️
         </div>
 
+
         <div class="success-title">
             เย้! 🥰
         </div>
 
+
         <div class="success-text">
 
-            ต้นน้ำรู้อยู่แล้วว่ามินนี่ต้องรัก 💗
+            ต้นน้ำรู้อยู่แล้ว
+            ว่ามินนี่ต้องรัก 💗
 
             <br><br>
 
@@ -1060,13 +1497,21 @@ body::before{
 </section>
 
 
+
 <!-- =========================
      MUSIC
 ========================= -->
 
-<audio id="music" loop>
-    <source src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/PUN%20-%20%E0%B8%A3%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B8%94%E0%B8%A3%20(Proof.).mp3" type="audio/mpeg">
+<audio
+    id="music"
+    loop>
+
+    <source
+        src="https://raw.githubusercontent.com/attapong1117-ux/memchamin/main/PUN%20-%20%E0%B8%A3%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B8%94%E0%B8%A3%20(Proof.).mp3"
+        type="audio/mpeg">
+
 </audio>
+
 
 <button
     class="music-btn"
@@ -1078,23 +1523,33 @@ body::before{
 </button>
 
 
+
 <script>
 
+
 /* =========================
-   PAGE
+   PAGE REFERENCES
 ========================= */
 
 const envelopePage =
-    document.getElementById("envelopePage");
+    document.getElementById(
+        "envelopePage"
+    );
 
 const homePage =
-    document.getElementById("homePage");
+    document.getElementById(
+        "homePage"
+    );
 
 const questionPage =
-    document.getElementById("questionPage");
+    document.getElementById(
+        "questionPage"
+    );
 
 const successPage =
-    document.getElementById("successPage");
+    document.getElementById(
+        "successPage"
+    );
 
 
 function showPage(page){
@@ -1103,11 +1558,16 @@ function showPage(page){
         .querySelectorAll(".page")
         .forEach(function(item){
 
-            item.classList.remove("active");
+            item.classList.remove(
+                "active"
+            );
 
         });
 
-    page.classList.add("active");
+    page.classList.add(
+        "active"
+    );
+
 }
 
 
@@ -1116,12 +1576,14 @@ function showPage(page){
 ========================= */
 
 const music =
-    document.getElementById("music");
+    document.getElementById(
+        "music"
+    );
 
 const musicButton =
-    document.getElementById("musicButton");
-
-let musicPlaying = false;
+    document.getElementById(
+        "musicButton"
+    );
 
 
 function startMusic(){
@@ -1129,14 +1591,15 @@ function startMusic(){
     music.play()
         .then(function(){
 
-            musicPlaying = true;
-
-            musicButton.innerHTML = "🔊";
+            musicButton.innerHTML =
+                "🔊";
 
         })
         .catch(function(){
 
-            musicPlaying = false;
+            console.log(
+                "Browser blocked autoplay."
+            );
 
         });
 
@@ -1149,17 +1612,15 @@ function toggleMusic(){
 
         music.play();
 
-        musicPlaying = true;
-
-        musicButton.innerHTML = "🔊";
+        musicButton.innerHTML =
+            "🔊";
 
     }else{
 
         music.pause();
 
-        musicPlaying = false;
-
-        musicButton.innerHTML = "🎵";
+        musicButton.innerHTML =
+            "🎵";
 
     }
 
@@ -1171,10 +1632,14 @@ function toggleMusic(){
 ========================= */
 
 const envelope =
-    document.getElementById("envelope");
+    document.getElementById(
+        "envelope"
+    );
 
 const envelopeStage =
-    document.getElementById("envelopeStage");
+    document.getElementById(
+        "envelopeStage"
+    );
 
 let envelopeOpened = false;
 
@@ -1192,13 +1657,18 @@ function openEnvelope(){
 
     envelopeOpened = true;
 
-    envelopeStage.classList.add("open");
+    envelopeStage.classList.add(
+        "open"
+    );
 
     startMusic();
 
+
     setTimeout(function(){
 
-        showPage(homePage);
+        showPage(
+            homePage
+        );
 
     },2000);
 
@@ -1206,45 +1676,61 @@ function openEnvelope(){
 
 
 /* =========================
-   QUESTION
+   HOME -> QUESTION
 ========================= */
 
 function showQuestion(){
 
-    showPage(questionPage);
+    showPage(
+        questionPage
+    );
 
 }
 
 
 /* =========================
-   LOVE BUTTON
+   LOVE BUTTONS
 ========================= */
 
 const yesButton =
-    document.getElementById("yesButton");
+    document.getElementById(
+        "yesButton"
+    );
 
 const noButton =
-    document.getElementById("noButton");
+    document.getElementById(
+        "noButton"
+    );
+
+const questionMessage =
+    document.getElementById(
+        "questionMessage"
+    );
 
 
 let noCount = 0;
+
+
+/*
+==========================================
+เปลี่ยนจำนวนตรงนี้ได้
+
+7 = กดไม่รัก 7 ครั้งแล้วหาย
+10 = กด 10 ครั้งแล้วหาย
+==========================================
+*/
+
+const disappearAt = 7;
 
 
 function loveNo(){
 
     noCount++;
 
-    /*
-       เปลี่ยนจำนวนตรงนี้ได้
-       เช่น 7 = หายหลังจากกดครั้งที่ 7
-    */
 
-    const disappearAt = 7;
-
-
-    /*
+    /* =========================
        YES ใหญ่ขึ้น
-    */
+    ========================= */
 
     const yesScale =
         Math.min(
@@ -1253,9 +1739,9 @@ function loveNo(){
         );
 
 
-    /*
+    /* =========================
        NO เล็กลง
-    */
+    ========================= */
 
     const noScale =
         Math.max(
@@ -1271,48 +1757,74 @@ function loveNo(){
         `scale(${noScale})`;
 
 
-    const messages = [
+    /* =========================
+       MESSAGE
+       เปลี่ยนตรงคำถาม
+    ========================= */
 
-        "💔 ไม่รัก",
+    const messages = [
 
         "แน่ใจเหรอ 🥺",
 
         "คิดดี ๆ นะ 😭",
 
+        "ต้นน้ำรอคำตอบอยู่นะ 💗",
+
         "กดรักเถอะ 💕",
 
-        "รักต้นน้ำเถอะนะ 🥹",
+        "รักต้นน้ำเถอะน้า 😭",
 
-        "ลองกด ❤️ ดูสิ",
+        "รักต้นน้ำเถอะน้าา 😭",
 
-        "เลือก ❤️ เถอะนะ"
+        "รักต้นน้ำเถอะน้าาา😭"
 
     ];
 
 
-    noButton.innerHTML =
-        messages[
-            Math.min(
-                noCount - 1,
-                messages.length - 1
-            )
-        ];
+    questionMessage.style.opacity =
+        "0";
 
 
-    /*
-       ถึงจำนวนที่กำหนดแล้ว
-       ปุ่มไม่รักจะหาย
-    */
+    questionMessage.style.transform =
+        "translateY(-5px)";
+
+
+    setTimeout(function(){
+
+        questionMessage.innerHTML =
+            messages[
+                Math.min(
+                    noCount - 1,
+                    messages.length - 1
+                )
+            ];
+
+
+        questionMessage.style.opacity =
+            "1";
+
+
+        questionMessage.style.transform =
+            "translateY(0)";
+
+    },150);
+
+
+    /* =========================
+       NO DISAPPEAR
+    ========================= */
 
     if(noCount >= disappearAt){
 
-        noButton.style.opacity = "0";
+        noButton.style.opacity =
+            "0";
 
         noButton.style.transform =
             "scale(0)";
 
         noButton.style.pointerEvents =
             "none";
+
 
         setTimeout(function(){
 
@@ -1332,7 +1844,9 @@ function loveNo(){
 
 function loveYes(){
 
-    showPage(successPage);
+    showPage(
+        successPage
+    );
 
     celebration();
 
@@ -1345,13 +1859,20 @@ function loveYes(){
 
 function celebration(){
 
-    for(let i=0;i<35;i++){
+    for(
+        let i=0;
+        i<40;
+        i++
+    ){
 
-        setTimeout(function(){
+        setTimeout(
+            function(){
 
-            createHeart(true);
+                createHeart(true);
 
-        },i*60);
+            },
+            i*60
+        );
 
     }
 
@@ -1359,17 +1880,23 @@ function celebration(){
 
 
 /* =========================
-   FLOATING HEART
+   CREATE HEART
 ========================= */
 
 function createHeart(big=false){
 
     const heart =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    heart.className = "heart";
+
+    heart.className =
+        "heart";
+
 
     const icons = [
+
         "❤️",
         "💕",
         "💗",
@@ -1377,33 +1904,46 @@ function createHeart(big=false){
         "💓",
         "💞",
         "💘"
+
     ];
+
 
     heart.innerHTML =
         icons[
             Math.floor(
-                Math.random()*icons.length
+                Math.random()
+                * icons.length
             )
         ];
 
+
     heart.style.left =
-        Math.random()*100 + "vw";
+        Math.random()*100
+        + "vw";
+
 
     heart.style.fontSize =
         (
             big
             ? 20 + Math.random()*35
             : 14 + Math.random()*22
-        ) + "px";
+        )
+        + "px";
+
 
     heart.style.animationDuration =
         (
             big
             ? 3 + Math.random()*2
             : 4 + Math.random()*3
-        ) + "s";
+        )
+        + "s";
 
-    document.body.appendChild(heart);
+
+    document.body.appendChild(
+        heart
+    );
+
 
     setTimeout(function(){
 
@@ -1414,11 +1954,16 @@ function createHeart(big=false){
 }
 
 
+/* =========================
+   BACKGROUND HEARTS
+========================= */
+
 setInterval(function(){
 
     createHeart(false);
 
 },900);
+
 
 </script>
 
